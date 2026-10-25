@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ Tash — Deep House, Afro Tech &amp; Amapiano DJ | South Africa</title>
+    <meta name="description" content="Official website, EPK and booking page for DJ Tash (Thabo Mosehla) — Deep House, Afro Tech and Amapiano DJ and producer from Johannesburg, South Africa.">
+    <meta name="theme-color" content="#0B0A09">
+    <meta property="og:title" content="DJ Tash — Deep House DJ &amp; Electronic Music Artist">
+    <meta property="og:description" content="Deep House, Afro Tech and Amapiano. Official profile, EPK and booking page.">
+    <meta property="og:type" content="profile">
+
+    <!-- Fonts: Archivo (display), Inter (body), IBM Plex Mono (small labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+        /* =========================================================
+           DESIGN TOKENS — obsidian, charcoal, bronze, forest, ivory
+           ========================================================= */
+        :root {
+            --obsidian: #0B0A09;
+            --obsidian-2: #100E0C;
+            --charcoal: #181614;
+            --charcoal-2: #211E1B;
+            --charcoal-3: #2B2723;
+            --forest: #1C241E;
+            --olive: #3B4433;
+            --olive-soft: #94A082;
+            --bronze: #B88A5B;
+            --bronze-deep: #8C6540;
+            --bronze-soft: #D2AE85;
+            --ivory: #EFE8DA;
+            --taupe: #A29686;
+            --line: rgba(239, 232, 218, 0.12);
+            --line-strong: rgba(239, 232, 218, 0.24);
+            --success: #94A082;
+
+            --font-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+            --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+            --nav-h: 72px;
+            --max: 1240px;
+            --gutter: clamp(1.25rem, 5vw, 3rem);
+            --section-y: clamp(4.5rem, 9vw, 8.5rem);
+            --photo-filter: contrast(1.06) saturate(0.88) brightness(0.92);
+            --ease: cubic-bezier(.2, .7, .2, 1);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body {
+            background: var(--obsidian);
+            color: var(--ivory);
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* fine film-grain over the whole site */
+        body::after {
+            content: ""; position: fixed; inset: 0; z-index: 1500; pointer-events: none; opacity: .08; mix-blend-mode: overlay;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+        }
+        a { color: inherit; text-decoration: none; }
+        ul, ol { list-style: none; }
+        img { max-width: 100%; display: block; }
+        button { font: inherit; color: inherit; }
+        .hidden { display: none !important; }
+
+        :focus-visible { outline: 2px solid var(--bronze-soft); outline-offset: 3px; }
+        .skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 3000; background: var(--ivory); color: var(--obsidian); padding: .7rem 1.1rem; font-weight: 600; transition: top .2s; }
+        .skip-link:focus { top: 1rem; }
+
+        /* =========================================================
+           TYPOGRAPHY
+           ========================================================= */
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.04; letter-spacing: -0.02em; color: var(--ivory); }
+        h1 { font-size: clamp(2.6rem, 7vw, 5.4rem); font-weight: 800; }
+        h2 { font-size: clamp(2rem, 4.6vw, 3.6rem); }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.6rem); line-height: 1.15; }
+        p { color: var(--taupe); }
+        .lede { font-size: clamp(1.05rem, 1.6vw, 1.3rem); line-height: 1.6; color: var(--ivory); opacity: .88; max-width: 46ch; }
+        .kicker, .label {
+            font-family: var(--font-mono); font-size: .74rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--bronze);
+        }
+        .kicker { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.4rem; }
+        .kicker::before { content: ""; width: 2.4rem; height: 1px; background: var(--bronze); }
+        .label.muted { color: var(--taupe); }
+
+        /* =========================================================
+           LAYOUT
+           ========================================================= */
+        .container { width: 100%; max-width: var(--max); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+        .sec { padding-top: var(--section-y); padding-bottom: var(--section-y); }
+        .sec-tight { padding-top: calc(var(--section-y) * .6); padding-bottom: calc(var(--section-y) * .6); }
+        .band-charcoal { background: linear-gradient(180deg, var(--charcoal) 0%, var(--obsidian-2) 100%); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+        .band-forest { background: radial-gradient(120% 140% at 85% 0%, #26322a 0%, var(--forest) 45%, #151b17 100%); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+        #app-view { padding-top: var(--nav-h); min-height: 80vh; outline: none; animation: pageIn .5s var(--ease); }
+        .page-head { padding-top: clamp(3rem, 7vw, 6rem); padding-bottom: clamp(2.2rem, 5vw, 4rem); }
+        .page-head h1 { max-width: 14ch; }
+        .page-head .lede { margin-top: 1.4rem; }
+
+        /* =========================================================
+           BUTTONS
+           ========================================================= */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: .6rem; min-height: 48px;
+            padding: .8rem 1.7rem; background: transparent; color: var(--ivory); border: 1px solid var(--line-strong); border-radius: 2px;
+            font-family: var(--font-mono); font-size: .76rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+            cursor: pointer; transition: background .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease);
+        }
+        .btn:hover { border-color: var(--bronze); color: var(--bronze-soft); }
+        .btn-primary { background: var(--bronze); border-color: var(--bronze); color: var(--obsidian); font-weight: 500; }
+        .btn-primary:hover { background: var(--bronze-soft); border-color: var(--bronze-soft); color: var(--obsidian); }
+        .btn-block { width: 100%; }
+        .btn-small { min-height: 40px; padding: .55rem 1.1rem; font-size: .7rem; }
+        .text-link { display: inline-flex; align-items: center; gap: .5rem; font-family: var(--font-mono); font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--taupe); border-bottom: 1px solid var(--line-strong); padding-bottom: 3px; transition: color .3s, border-color .3s; cursor: pointer; background: none; border-top: 0; border-left: 0; border-right: 0; }
+        .text-link:hover { color: var(--bronze-soft); border-color: var(--bronze); }
+        .btn-row { display: flex; flex-wrap: wrap; gap: .9rem; align-items: center; }
+
+        /* =========================================================
+           HEADER & NAVIGATION
+           ========================================================= */
+        header#main-header {
+            position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); z-index: 1000;
+            background: linear-gradient(180deg, rgba(11,10,9,.88), rgba(11,10,9,.62)); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--line);
+        }
+        .nav-container { height: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+        .logo { font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; letter-spacing: .22em; color: var(--ivory); }
+        .logo span { color: var(--bronze); }
+        .nav-links { display: flex; align-items: center; gap: clamp(1rem, 2.2vw, 2.1rem); }
+        .nav-links a { position: relative; font-size: .78rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--taupe); padding: .5rem 0; transition: color .3s; }
+        .nav-links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: .1rem; height: 1px; background: var(--bronze); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease); }
+        .nav-links a:hover, .nav-links a.active { color: var(--ivory); }
+        .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+        .nav-links a.nav-cta { color: var(--ivory); border: 1px solid var(--line-strong); padding: .55rem 1.1rem; border-radius: 2px; }
+        .nav-links a.nav-cta::after { display: none; }
+        .nav-links a.nav-cta:hover, .nav-links a.nav-cta.active { border-color: var(--bronze); color: var(--bronze-soft); }
+        .mobile-toggle { display: none; background: none; border: 1px solid var(--line-strong); width: 46px; height: 46px; align-items: center; justify-content: center; font-size: 1.4rem; border-radius: 2px; cursor: pointer; }
+
+        /* =========================================================
+           HERO
+           ========================================================= */
+        .hero { position: relative; min-height: 100vh; min-height: 100svh; margin-top: calc(var(--nav-h) * -1); display: flex; align-items: flex-end; overflow: hidden; background: var(--obsidian); isolation: isolate; }
+        .hero-media { position: absolute; top: 0; right: 0; bottom: 0; width: 64%; z-index: -2; }
+        .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; filter: var(--photo-filter); }
+        .hero-media::after {
+            content: ""; position: absolute; inset: 0;
+            background:
+                linear-gradient(90deg, var(--obsidian) 0%, rgba(11,10,9,.72) 22%, rgba(11,10,9,.18) 62%, rgba(11,10,9,.05) 100%),
+                linear-gradient(0deg, var(--obsidian) 0%, rgba(11,10,9,0) 38%),
+                linear-gradient(180deg, rgba(11,10,9,.55) 0%, rgba(11,10,9,0) 22%);
+        }
+        .hero-glow { position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(55% 60% at 78% 30%, rgba(184,138,91,.20), rgba(184,138,91,0) 70%), radial-gradient(40% 50% at 8% 100%, rgba(59,68,51,.35), rgba(59,68,51,0) 70%); }
+        .hero-inner { padding-top: calc(var(--nav-h) + 4rem); padding-bottom: clamp(2.6rem, 7vh, 5rem); }
+        .hero h1 { font-size: clamp(3.9rem, 15vw, 11rem); font-weight: 900; line-height: .86; letter-spacing: -0.035em; text-transform: uppercase; margin-bottom: clamp(1.4rem, 3vw, 2.2rem); }
+        .hero h1 .dj { font-weight: 500; opacity: .5; margin-right: .08em; }
+        .hero-tag { font-family: var(--font-display); font-size: clamp(1.25rem, 2.6vw, 2rem); font-weight: 500; letter-spacing: -.01em; color: var(--ivory); max-width: 22ch; line-height: 1.2; margin-bottom: 1rem; }
+        .hero-sub { max-width: 46ch; font-size: .98rem; margin-bottom: 2.1rem; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-bottom: 1.6rem; }
+        .hero-links { display: flex; flex-wrap: wrap; gap: 1.6rem; }
+        .hero-foot { margin-top: clamp(2.2rem, 6vh, 4rem); padding-top: 1.4rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: .8rem 2rem; }
+        .hero-foot .label { display: inline-flex; align-items: center; gap: .55rem; }
+        .wave { height: 1.1rem; width: auto; display: block; }
+        .wave rect { fill: var(--bronze); }
+
+        /* =========================================================
+           IMAGES
+           ========================================================= */
+        .ph-frame { position: relative; overflow: hidden; background: var(--charcoal-2); }
+        .ph-frame img { width: 100%; height: 100%; object-fit: cover; filter: var(--photo-filter); transition: transform 1s var(--ease); }
+        .ph-frame::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(11,10,9,0) 55%, rgba(11,10,9,.35) 100%); box-shadow: inset 0 0 0 1px rgba(239,232,218,.06); }
+        img.is-placeholder { filter: none !important; }
+        .ratio-wide { aspect-ratio: 16 / 10; }
+        .ratio-square { aspect-ratio: 1 / 1; }
+        .ratio-portrait { aspect-ratio: 4 / 5; }
+
+        /* =========================================================
+           ABOUT
+           ========================================================= */
+        .about-grid { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+        .about-portrait { position: relative; margin-top: 2.5rem; }
+        .about-portrait::before { content: ""; position: absolute; top: -1.4rem; left: -1.4rem; right: 1.4rem; bottom: 1.4rem; border: 1px solid var(--bronze-deep); z-index: 0; }
+        .about-portrait .ph-frame { position: relative; z-index: 1; }
+        .about-portrait figcaption { margin-top: 1.1rem; }
+        .about-copy h1, .about-copy h2 { margin-bottom: 1.4rem; max-width: 12ch; }
+        .about-copy .name { margin-bottom: 1.6rem; color: var(--taupe); }
+        .about-copy .lede { margin-bottom: 1.6rem; }
+        .body-p { max-width: 58ch; margin-bottom: 1.1rem; }
+        .facts { margin-top: 2rem; border-top: 1px solid var(--line); }
+        .fact { display: grid; grid-template-columns: 7rem 1fr; gap: 1.5rem; padding: 1.2rem 0; border-bottom: 1px solid var(--line); }
+        .fact dd { color: var(--ivory); opacity: .85; max-width: 52ch; }
+
+        .timeline { margin-top: clamp(2rem, 5vw, 3.5rem); border-top: 1px solid var(--line); }
+        .tl-row { display: grid; grid-template-columns: minmax(8rem, 1fr) 4fr; gap: 1rem 3rem; padding: 1.9rem 0; border-bottom: 1px solid var(--line); transition: background .35s; }
+        .tl-row:hover { background: linear-gradient(90deg, rgba(184,138,91,.07), rgba(184,138,91,0)); }
+        .tl-row .label { padding-top: .45rem; }
+        .tl-row h3 { margin-bottom: .5rem; max-width: 34ch; }
+        .tl-row p { max-width: 56ch; }
+
+        /* =========================================================
+           MUSIC
+           ========================================================= */
+        .release-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: clamp(1.4rem, 3vw, 2.6rem); }
+        .release { position: relative; }
+        .release .ph-frame { margin-bottom: 1.2rem; }
+        .release .idx { position: absolute; top: .9rem; left: 1rem; z-index: 2; font-family: var(--font-mono); font-size: .72rem; letter-spacing: .14em; color: var(--ivory); opacity: .75; }
+        .release h3 { margin: .35rem 0 .3rem; }
+        .release:hover .ph-frame img { transform: scale(1.035); }
+        .release .meta-line { color: var(--taupe); font-size: .92rem; }
+        .release .text-link { margin-top: .9rem; }
+        .platforms { margin-top: clamp(3rem, 6vw, 5rem); padding-top: 2rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; align-items: center; gap: 1.2rem 2.2rem; }
+        .platforms .label { margin-right: .6rem; }
+        .platforms a { display: inline-flex; align-items: center; gap: .55rem; font-size: .92rem; font-weight: 500; color: var(--ivory); padding: .35rem 0; border-bottom: 1px solid transparent; transition: color .3s, border-color .3s; }
+        .platforms a:hover { color: var(--bronze-soft); border-color: var(--bronze); }
+        .watch { margin-top: clamp(3rem, 6vw, 5rem); display: grid; grid-template-columns: 5fr 7fr; gap: 2rem 4rem; align-items: center; padding: clamp(1.6rem, 4vw, 3rem); background: linear-gradient(135deg, var(--charcoal-2), var(--charcoal)); border: 1px solid var(--line); }
+        .watch h3 { margin-top: .6rem; font-size: clamp(1.5rem, 3vw, 2.2rem); }
+        .watch p { margin-bottom: 1.4rem; }
+        .watch-side { display: flex; flex-direction: column; align-items: flex-start; gap: .6rem; }
+        .wave-big { width: 100%; height: 5.5rem; opacity: .9; }
+        .wave-big rect { fill: var(--bronze-deep); }
+
+        /* =========================================================
+           NEWS & EVENTS CARDS
+           ========================================================= */
+        .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: clamp(1.4rem, 3vw, 2.4rem); }
+        .card { position: relative; display: flex; flex-direction: column; background: var(--charcoal); border: 1px solid var(--line); border-radius: 2px; overflow: hidden; transition: border-color .4s var(--ease), transform .4s var(--ease), background .4s; }
+        .card:hover { border-color: rgba(184,138,91,.55); transform: translateY(-4px); background: var(--charcoal-2); }
+        .card:hover .ph-frame img { transform: scale(1.04); }
+        .card-body { padding: clamp(1.3rem, 2.4vw, 1.8rem); display: flex; flex-direction: column; flex: 1; gap: .7rem; }
+        .card-body h3 { margin: .1rem 0; }
+        .card-body p { font-size: .96rem; }
+        .card-body .btn { margin-top: auto; align-self: flex-start; }
+        .card-foot { margin-top: auto; padding-top: 1rem; }
+        .tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+        .tag { font-family: var(--font-mono); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; padding: .28rem .6rem; border: 1px solid var(--line-strong); color: var(--taupe); border-radius: 2px; }
+        .tag.sample { border-color: var(--bronze); color: var(--bronze-soft); }
+        .tag.live { border-color: var(--olive-soft); color: var(--olive-soft); }
+        .event-top { display: flex; align-items: baseline; gap: .9rem; }
+        .event-day { font-family: var(--font-display); font-weight: 800; font-size: 2.6rem; line-height: 1; letter-spacing: -.03em; color: var(--ivory); }
+        .event-where { display: flex; align-items: center; gap: .45rem; }
+        .notice { margin-bottom: 2.4rem; padding: 1rem 1.3rem; border-left: 2px solid var(--bronze); background: var(--charcoal); color: var(--ivory); opacity: .9; font-size: .95rem; max-width: 70ch; }
+
+        /* =========================================================
+           BRANDS
+           ========================================================= */
+        .split { display: grid; grid-template-columns: 5fr 6fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+        .sticky-col { position: sticky; top: calc(var(--nav-h) + 2rem); }
+        .opp-list { border-top: 1px solid var(--line); margin-top: 1.6rem; }
+        .opp { display: grid; grid-template-columns: 3.2rem 1fr; gap: 1rem; padding: 1.4rem 0; border-bottom: 1px solid var(--line); }
+        .opp h3 { font-size: 1.2rem; margin-bottom: .3rem; font-family: var(--font-body); font-weight: 600; letter-spacing: -.005em; }
+        .opp p { font-size: .96rem; }
+        .check-list { margin: 1.4rem 0 2.2rem; display: flex; flex-direction: column; gap: 0; }
+        .check-list li { display: grid; grid-template-columns: 1.6rem 1fr; gap: .6rem; padding: .85rem 0; border-bottom: 1px solid var(--line); color: var(--ivory); opacity: .88; font-size: .98rem; }
+        .check-list li i { color: var(--bronze); font-size: 1.1rem; line-height: 1.5; }
+        .partners { margin-top: clamp(3rem, 7vw, 6rem); }
+        .partner-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 1.4rem; margin-top: 1.6rem; }
+        .partner { padding: 1.6rem; background: var(--charcoal); border: 1px solid var(--line); border-radius: 2px; display: grid; gap: .5rem; }
+        .partner h3 { font-size: 1.35rem; }
+
+        /* =========================================================
+           CONTACT & FORMS
+           ========================================================= */
+        .contact-grid { display: grid; grid-template-columns: 6fr 5fr; gap: clamp(2rem, 6vw, 5.5rem); align-items: start; }
+        .contact-grid > .form-card { margin-top: clamp(3rem, 7vw, 6rem); }
+        @media (max-width: 1000px) { .contact-grid > .form-card { margin-top: 0; } }
+        .audience { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.4rem 0 2rem; }
+        .rows { border-top: 1px solid var(--line); margin: 1.6rem 0 2rem; }
+        .row { display: grid; grid-template-columns: 8rem 1fr; gap: 1rem 1.5rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+        .row dd { color: var(--ivory); opacity: .88; font-size: .98rem; }
+        .mgmt { padding: 1.6rem; background: var(--charcoal); border: 1px solid var(--line); border-left: 2px solid var(--bronze); border-radius: 2px; }
+        .mgmt h3 { margin: .5rem 0 1rem; }
+        .mgmt ul { display: grid; gap: .7rem; }
+        .mgmt a.inline { display: inline-flex; align-items: center; gap: .6rem; color: var(--ivory); border-bottom: 1px solid var(--line-strong); padding-bottom: 2px; transition: color .3s, border-color .3s; word-break: break-all; }
+        .mgmt a.inline:hover { color: var(--bronze-soft); border-color: var(--bronze); }
+        .form-card { padding: clamp(1.5rem, 3vw, 2.4rem); background: linear-gradient(160deg, var(--charcoal-2), var(--charcoal)); border: 1px solid var(--line); border-radius: 2px; }
+        .form-card h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 1.6rem; }
+        .form-group { margin-bottom: 1.3rem; }
+        .form-group label { display: block; margin-bottom: .5rem; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--taupe); }
+        input[type="text"], input[type="email"], input[type="date"], select, textarea {
+            width: 100%; min-height: 50px; padding: .85rem 1rem; background: var(--obsidian-2); border: 1px solid var(--line-strong); border-radius: 2px;
+            color: var(--ivory); font-family: var(--font-body); font-size: 1rem; transition: border-color .3s, background .3s;
+        }
+        textarea { resize: vertical; min-height: 130px; }
+        select { appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8'><path d='M1 1l6 6 6-6' fill='none' stroke='%23B88A5B' stroke-width='1.6'/></svg>"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.6rem; }
+        input::placeholder, textarea::placeholder { color: #918777; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--bronze); background: #14110f; box-shadow: 0 0 0 3px rgba(184,138,91,.18); }
+        .consent { display: grid; grid-template-columns: 1.3rem 1fr; gap: .8rem; align-items: start; margin: 1.4rem 0 1.6rem; font-size: .9rem; color: var(--taupe); cursor: pointer; }
+        .consent input { width: 1.2rem; height: 1.2rem; margin-top: .25rem; accent-color: var(--bronze); }
+        .form-note { margin-top: 1rem; font-size: .82rem; color: var(--taupe); }
+
+        /* =========================================================
+           CTA BAND
+           ========================================================= */
+        .cta { display: grid; grid-template-columns: 7fr 5fr; gap: 2rem 4rem; align-items: end; }
+        .cta h2 { max-width: 14ch; }
+        .cta p { margin-top: 1.2rem; max-width: 46ch; color: var(--ivory); opacity: .8; }
+        .cta .btn-row { justify-content: flex-start; }
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+        footer#site-footer { margin-top: 0; background: var(--obsidian-2); border-top: 1px solid var(--line); padding: clamp(3rem, 6vw, 5rem) 0 2.4rem; }
+        .foot-grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2.4rem; align-items: flex-start; }
+        .foot-logo { font-family: var(--font-display); font-weight: 900; font-size: clamp(2rem, 5vw, 3.4rem); letter-spacing: .12em; line-height: 1; }
+        .foot-logo span { color: var(--bronze); }
+        .socials { display: flex; gap: .7rem; }
+        .socials a { width: 46px; height: 46px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line-strong); border-radius: 2px; font-size: 1.2rem; color: var(--ivory); transition: border-color .3s, color .3s, transform .3s var(--ease); }
+        .socials a:hover { border-color: var(--bronze); color: var(--bronze-soft); transform: translateY(-2px); }
+        .foot-base { margin-top: 2.6rem; padding-top: 1.5rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; }
+        .foot-base p { font-size: .85rem; margin: 0; }
+
+        /* =========================================================
+           TOAST
+           ========================================================= */
+        .toast-container { position: fixed; bottom: 1.5rem; right: 1.5rem; left: auto; z-index: 2000; display: flex; flex-direction: column; gap: .6rem; max-width: calc(100vw - 3rem); }
+        .toast { display: flex; align-items: center; gap: .8rem; background: var(--charcoal-3); color: var(--ivory); border: 1px solid var(--line-strong); border-left: 2px solid var(--bronze); padding: .9rem 1.2rem; box-shadow: 0 12px 40px rgba(0,0,0,.55); animation: slideIn .35s var(--ease); font-size: .92rem; transition: opacity .3s, transform .3s; }
+        .toast i { color: var(--bronze); }
+
+        /* =========================================================
+           ADMIN (demo dashboard)
+           ========================================================= */
+        .admin-shell { display: flex; min-height: 100vh; }
+        .admin-sidebar { width: 250px; flex-shrink: 0; background: var(--charcoal); border-right: 1px solid var(--line); height: 100vh; position: fixed; left: 0; top: 0; padding: 2rem 1.4rem; z-index: 1001; }
+        .admin-sidebar .logo { display: block; margin-bottom: 2.2rem; }
+        .admin-nav li { margin-bottom: .3rem; }
+        .admin-nav a { display: block; padding: .7rem .9rem; font-size: .92rem; color: var(--taupe); border-radius: 2px; transition: background .3s, color .3s; }
+        .admin-nav a:hover, .admin-nav a.active { background: var(--charcoal-3); color: var(--bronze-soft); }
+        .admin-content { margin-left: 250px; padding: clamp(1.4rem, 3vw, 3rem); width: calc(100% - 250px); min-width: 0; }
+        .admin-content h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.4rem; }
+        .admin-content .card { padding: 1.6rem; margin-top: 2rem; }
+        .admin-content .card:hover { transform: none; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; margin-top: 1.6rem; }
+        .stat-card { padding: 1.5rem; background: var(--charcoal); border: 1px solid var(--line); border-radius: 2px; }
+        .stat-number { display: block; font-family: var(--font-display); font-weight: 800; font-size: 2.3rem; letter-spacing: -.03em; color: var(--ivory); line-height: 1.1; }
+        .stat-label { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--taupe); }
+        .table-wrap { overflow-x: auto; margin-top: 1rem; }
+        .a-table { width: 100%; border-collapse: collapse; text-align: left; min-width: 520px; }
+        .a-table th { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); font-weight: 500; padding: .9rem 1rem; border-bottom: 1px solid var(--line-strong); }
+        .a-table td { padding: .9rem 1rem; border-bottom: 1px solid var(--line); color: var(--ivory); opacity: .9; font-size: .95rem; }
+        .demo-note { margin-top: 1rem; font-size: .84rem; color: var(--taupe); border-left: 2px solid var(--bronze-deep); padding-left: .9rem; }
+        .admin-form { display: grid; gap: .2rem; margin-top: 1.2rem; max-width: 520px; }
+        .admin-thumbs { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1rem; margin-top: 2rem; }
+        .admin-thumbs .card { padding: 0; margin: 0; }
+        .admin-thumbs .card .card-body { gap: .5rem; }
+        .bar-chart { display: flex; align-items: flex-end; gap: .7rem; height: 220px; padding-top: 1rem; margin-bottom: 2rem; border-bottom: 1px solid var(--line-strong); }
+        .bar { flex: 1; position: relative; min-height: 2px; background: linear-gradient(180deg, var(--bronze), var(--bronze-deep)); transition: height 1s; }
+        .bar span { position: absolute; bottom: -1.7rem; left: 50%; transform: translateX(-50%); font-family: var(--font-mono); font-size: .7rem; color: var(--taupe); }
+
+        /* =========================================================
+           EPK — A4 press kit (built by buildEPK(), shown only when printing / previewing)
+           ========================================================= */
+        @page { size: A4; margin: 0; }
+        .epk-root { display: none; --e-bg: #0B0A09; --e-bg2: #181614; --e-ink: #EFE8DA; --e-sub: #B3A898; --e-acc: #C39A6B; --e-line: rgba(239,232,218,.2); --e-green: #1C241E;
+            font-family: var(--font-body); color: var(--e-ink); font-size: 9.8pt; line-height: 1.55; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        .epk-root.epk-light { --e-bg: #F7F2E8; --e-bg2: #ECE5D6; --e-ink: #1B1815; --e-sub: #4D453B; --e-acc: #7A5632; --e-line: rgba(27,24,21,.24); --e-green: #E3E6DA; }
+        .epk-root.epk-prep { display: block; position: absolute; left: -12000px; top: 0; width: 210mm; }
+        .epk-root.epk-preview { display: block; width: 210mm; margin: 0 auto; zoom: var(--pz, 1); }
+        .epk-root *, .epk-root *::before, .epk-root *::after { box-sizing: border-box; }
+        .epk-root h1, .epk-root h2, .epk-root h3, .epk-root p, .epk-root ul { margin: 0; padding: 0; }
+        .epk-root h1, .epk-root h2, .epk-root h3 { font-family: var(--font-display); color: var(--e-ink); letter-spacing: -.02em; line-height: 1.05; }
+        .epk-root p { color: var(--e-sub); }
+        .epk-root a { color: inherit; text-decoration: none; }
+        .epk-root img { display: block; max-width: none; }
+        .epk-page { position: relative; width: 210mm; height: 296.4mm; padding: 12mm 15mm 9mm; background: var(--e-bg); display: flex; flex-direction: column; overflow: hidden; break-after: page; page-break-after: always; }
+        .epk-page:last-child { break-after: auto; page-break-after: auto; }
+        .epk-preview .epk-page { margin-bottom: 8mm; box-shadow: 0 6px 30px rgba(0,0,0,.5); }
+        .epk-mono { font-family: var(--font-mono); font-size: 7.6pt; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--e-acc); }
+        .epk-head { display: flex; justify-content: space-between; align-items: center; padding-bottom: 3.5mm; margin-bottom: 6mm; border-bottom: 1px solid var(--e-line); }
+        .epk-logo { font-family: var(--font-display); font-weight: 800; font-size: 11pt; letter-spacing: .22em; color: var(--e-ink); }
+        .epk-logo i { color: var(--e-acc); font-style: normal; }
+        .epk-foot { margin-top: auto; padding-top: 4mm; border-top: 1px solid var(--e-line); display: flex; justify-content: space-between; gap: 6mm; font-family: var(--font-mono); font-size: 7.6pt; letter-spacing: .1em; text-transform: uppercase; color: var(--e-sub); }
+        .epk-kicker { display: flex; align-items: center; gap: 3mm; margin-bottom: 4mm; }
+        .epk-kicker::before { content: ""; width: 9mm; height: 1px; background: var(--e-acc); }
+        .epk-h2 { font-size: 24pt; font-weight: 800; margin-bottom: 4mm; }
+        .epk-h3 { font-size: 13pt; font-weight: 700; letter-spacing: -.01em; }
+        .epk-lede { font-size: 12.2pt; line-height: 1.5; color: var(--e-ink); margin-bottom: 5mm; }
+        .epk-p { margin-bottom: 3mm; }
+        .epk-section { margin-top: 6mm; }
+        .epk-section-title { display: flex; align-items: baseline; justify-content: space-between; gap: 4mm; margin-bottom: 3mm; padding-bottom: 2mm; border-bottom: 1px solid var(--e-line); }
+        .epk-section-title h3 { font-size: 15pt; font-weight: 800; }
+        .epk-tile { position: relative; overflow: hidden; background: var(--e-bg2); border: 1px solid var(--e-line); }
+        .epk-tile img { width: 100%; height: 100%; object-fit: cover; }
+        .epk-tile.is-sq { aspect-ratio: 1 / 1; }
+        .epk-tile.is-wide { aspect-ratio: 7 / 5; }
+        .epk-tile.is-port { aspect-ratio: 4 / 5; }
+        .epk-link { font-family: var(--font-mono); font-size: 8pt; color: var(--e-acc); word-break: break-all; }
+        .epk-btn { display: inline-block; background: var(--e-acc); color: #0B0A09 !important; padding: 3.2mm 6.5mm; font-family: var(--font-mono); font-size: 8.6pt; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; }
+        .epk-light .epk-btn { color: #FFF8EC !important; }
+        .epk-chips { display: flex; flex-wrap: wrap; gap: 2mm; }
+        .epk-chip { font-family: var(--font-mono); font-size: 7.6pt; letter-spacing: .12em; text-transform: uppercase; padding: 1.4mm 3mm; border: 1px solid var(--e-line); color: var(--e-ink); }
+
+        /* cover (always dark) */
+        .epk-cover { padding: 0; background: #0B0A09; --e-ink: #EFE8DA; --e-sub: #B3A898; --e-acc: #C39A6B; --e-line: rgba(239,232,218,.22); color: #EFE8DA; }
+        .epk-cover .epk-photo { position: absolute; top: 0; left: 0; right: 0; height: 232mm; }
+        .epk-cover .epk-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; filter: contrast(1.05) saturate(.9) brightness(.92); }
+        .epk-cover .epk-fade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,10,9,.7) 0%, rgba(11,10,9,0) 20%, rgba(11,10,9,0) 38%, rgba(11,10,9,.86) 66%, #0B0A09 80%), radial-gradient(60% 40% at 80% 25%, rgba(195,154,107,.16), rgba(195,154,107,0)); }
+        .epk-cover .epk-top { position: absolute; top: 13mm; left: 15mm; right: 15mm; display: flex; justify-content: space-between; align-items: center; }
+        .epk-cover .epk-bottom { position: absolute; left: 15mm; right: 15mm; bottom: 13mm; }
+        .epk-cover h1 { font-size: 90pt; font-weight: 900; line-height: .86; letter-spacing: -.035em; text-transform: uppercase; margin: 0 0 6mm; color: #EFE8DA; }
+        .epk-cover h1 .dj { font-weight: 500; opacity: .5; }
+        .epk-position { font-size: 12.5pt; line-height: 1.45; color: #EFE8DA; max-width: 150mm; margin-bottom: 6mm; }
+        .epk-cta { display: grid; grid-template-columns: 1fr auto; gap: 6mm; align-items: end; margin-top: 7mm; padding-top: 5mm; border-top: 1px solid var(--e-line); }
+        .epk-cta strong { display: block; font-family: var(--font-display); font-size: 15pt; font-weight: 800; color: #EFE8DA; margin-bottom: 1.5mm; }
+        .epk-cta span { color: #B3A898; font-size: 9.6pt; }
+
+        /* about */
+        .epk-about { display: grid; grid-template-columns: 56mm 1fr; gap: 11mm; align-items: start; }
+        .epk-facts { margin-top: 3mm; border-top: 1px solid var(--e-line); }
+        .epk-fact { display: grid; grid-template-columns: 24mm 1fr; gap: 5mm; padding: 3.2mm 0; border-bottom: 1px solid var(--e-line); break-inside: avoid; }
+        .epk-fact p { color: var(--e-ink); }
+        .epk-identity { margin-top: 10mm; padding: 8mm 9mm; background: var(--e-bg2); border-left: 1.2mm solid var(--e-acc); break-inside: avoid; }
+        .epk-identity .epk-quote { font-family: var(--font-display); font-weight: 700; font-size: 13.5pt; line-height: 1.32; letter-spacing: -.01em; color: var(--e-ink); margin: 2.5mm 0 5mm; }
+
+        /* music */
+        .epk-releases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7mm; }
+        .epk-rel { break-inside: avoid; display: flex; flex-direction: column; }
+        .epk-rel .epk-tile { margin-bottom: 3.5mm; }
+        .epk-rel h3 { font-size: 13pt; font-weight: 700; margin: 1.5mm 0 1mm; letter-spacing: -.01em; }
+        .epk-qrrow { display: flex; gap: 3.5mm; align-items: center; margin-top: auto; padding-top: 3.5mm; }
+        .epk-qr { width: 23mm; height: 23mm; flex-shrink: 0; }
+        .epk-qrrow p { font-size: 8.4pt; line-height: 1.4; }
+        .epk-streams { display: grid; grid-template-columns: 1fr 34mm; gap: 8mm; align-items: start; }
+        .epk-stream { display: block; padding: 2.1mm 0; border-bottom: 1px solid var(--e-line); }
+        .epk-stream strong { display: block; font-size: 10.4pt; color: var(--e-ink); font-weight: 600; }
+        .epk-qrbig { width: 34mm; height: 34mm; }
+        .epk-qrcap { margin-top: 2mm; font-size: 8.2pt; line-height: 1.35; }
+
+        /* two-page summary */
+        .epk-s1 { padding: 0; }
+        .epk-s-hero { position: relative; height: 80mm; background: #0B0A09; overflow: hidden; --e-ink: #EFE8DA; --e-sub: #B3A898; --e-acc: #C39A6B; --e-line: rgba(239,232,218,.22); flex-shrink: 0; }
+        .epk-s-hero > img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; filter: contrast(1.05) saturate(.9) brightness(.9); }
+        .epk-s-fade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,10,9,.65) 0%, rgba(11,10,9,0) 25%, rgba(11,10,9,.2) 50%, rgba(11,10,9,.92) 100%); }
+        .epk-s-hero .epk-top { position: absolute; top: 12mm; left: 15mm; right: 15mm; display: flex; justify-content: space-between; align-items: center; }
+        .epk-s-name { position: absolute; left: 15mm; right: 15mm; bottom: 8mm; }
+        .epk-s-name h1 { font-size: 58pt; font-weight: 900; line-height: .88; letter-spacing: -.035em; text-transform: uppercase; color: #EFE8DA; margin: 0 0 3mm; }
+        .epk-s-name h1 .dj { font-weight: 500; opacity: .55; }
+        .epk-s-name .epk-mono { color: #C39A6B; }
+        .epk-s-body { padding: 7mm 15mm 0; flex: 1; }
+        .epk-s1 .epk-foot { margin: auto 15mm 9mm; }
+        .epk-s-rel { display: flex; gap: 3.5mm; align-items: center; }
+        .epk-s-rel .epk-qr { width: 21mm; height: 21mm; }
+        .epk-s-rel h3 { font-size: 11pt; font-weight: 700; margin: 1mm 0; }
+        .epk-s2 .epk-book-grid { margin-top: 6mm; align-items: start; }
+        .epk-s2 .epk-stream { padding: 1.7mm 0; }
+
+        /* offer, highlights, photos */
+        .epk-offers { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+        .epk-offer { padding: 4.5mm 5mm; border: 1px solid var(--e-line); background: var(--e-bg2); break-inside: avoid; }
+        .epk-offer h3 { font-size: 11.5pt; font-weight: 700; margin-bottom: 1.6mm; }
+        .epk-offer p { font-size: 9.2pt; line-height: 1.45; }
+        .epk-tl { display: grid; grid-template-columns: 33mm 1fr; gap: 6mm; padding: 2.4mm 0; border-bottom: 1px solid var(--e-line); break-inside: avoid; }
+        .epk-tl h3 { font-size: 10.8pt; font-weight: 700; margin-bottom: .8mm; }
+        .epk-tl p { font-size: 9.2pt; line-height: 1.4; }
+        .epk-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+        .epk-rider li { margin-left: 4.5mm; list-style: disc; color: var(--e-ink); }
+
+        /* booking */
+        .epk-book { background: radial-gradient(70% 35% at 85% 8%, rgba(195,154,107,.16), rgba(195,154,107,0)), var(--e-bg); }
+        .epk-light.epk-root .epk-book { background: var(--e-bg); }
+        .epk-book-h { font-size: 46pt; font-weight: 900; line-height: .9; letter-spacing: -.035em; text-transform: uppercase; margin-bottom: 5mm; }
+        .epk-book-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9mm; margin-top: 6mm; }
+        .epk-who { margin-top: 3mm; border-top: 1px solid var(--e-line); }
+        .epk-who li { list-style: none; padding: 2.2mm 0; border-bottom: 1px solid var(--e-line); color: var(--e-ink); display: flex; gap: 3mm; }
+        .epk-who li::before { content: ""; width: 1.6mm; height: 1.6mm; background: var(--e-acc); margin-top: 2.2mm; flex-shrink: 0; }
+        .epk-contact { padding: 6mm 6.5mm; background: var(--e-bg2); border-left: 1.2mm solid var(--e-acc); }
+        .epk-contact h3 { font-size: 16pt; font-weight: 800; margin: 1.5mm 0 4mm; }
+        .epk-contact a.row { display: block; font-size: 11pt; color: var(--e-ink); padding: 1.6mm 0; border-bottom: 1px solid var(--e-line); }
+        .epk-contact a.row small { display: block; font-family: var(--font-mono); font-size: 7.2pt; letter-spacing: .14em; text-transform: uppercase; color: var(--e-acc); }
+        .epk-book .epk-wave { width: 100%; height: 12mm; margin-top: 7mm; }
+        .epk-book .epk-wave rect { fill: var(--e-acc); opacity: .75; }
+
+        /* admin: EPK page */
+        .epk-pvwrap { width: 100%; padding: 4.5rem 1rem 2rem; }
+        .epk-pvwrap .lb-btn { position: fixed; }
+        .ov-scroll { align-items: flex-start; overflow: auto; }
+        .a-list { list-style: none; margin-top: 1rem; display: grid; gap: .55rem; }
+        .a-list li { display: grid; grid-template-columns: 1.6rem 1fr; gap: .4rem; color: var(--ivory); opacity: .92; font-size: .95rem; }
+        .a-list li small { display: block; color: var(--taupe); }
+        .a-list .ok { color: var(--olive-soft); } .a-list .no { color: #e6aa9d; } .a-list .info { color: var(--bronze-soft); }
+
+        /* =========================================================
+           GALLERY, LIGHTBOX & DIALOGS
+           ========================================================= */
+        html { scrollbar-gutter: stable; }
+        html.no-scroll { overflow: hidden; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+        .g-filters { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2.2rem; }
+        .chip { display: inline-flex; align-items: center; gap: .6rem; min-height: 44px; padding: .55rem 1.1rem; background: transparent; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--taupe); font-family: var(--font-mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; transition: background .3s var(--ease), color .3s, border-color .3s; }
+        .chip:hover { border-color: var(--bronze); color: var(--ivory); }
+        .chip[aria-pressed="true"] { background: var(--bronze); border-color: var(--bronze); color: var(--obsidian); }
+        .chip .count { opacity: .75; }
+
+        .g-section + .g-section { margin-top: clamp(3rem, 6vw, 5rem); }
+        .g-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.6rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+        .g-head h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
+        .g-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: clamp(1.2rem, 2.4vw, 2rem); }
+        .g-item { margin: 0; }
+        .ratio-photo { aspect-ratio: 4 / 3; }
+        .ratio-video { aspect-ratio: 16 / 9; }
+        .g-box { border: 1px solid var(--line); border-radius: 2px; }
+        .g-thumb { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; padding: 0; border: 0; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--ivory); }
+        .g-thumb::before { content: ""; position: absolute; inset: 0; background: rgba(11,10,9,0); transition: background .4s var(--ease); }
+        .g-thumb.is-video::before { background: linear-gradient(180deg, rgba(11,10,9,.25), rgba(11,10,9,.55)); }
+        .g-item:hover .g-thumb::before, .g-thumb:focus-visible::before { background: rgba(11,10,9,.45); }
+        .g-item:hover .ph-frame img { transform: scale(1.04); }
+        .g-play { position: relative; width: 64px; height: 64px; border-radius: 50%; border: 1px solid var(--bronze-soft); background: rgba(11,10,9,.65); display: flex; align-items: center; justify-content: center; padding-left: 4px; transition: transform .4s var(--ease), background .3s, color .3s; }
+        .g-item:hover .g-play { transform: scale(1.08); background: var(--bronze); color: var(--obsidian); }
+        .g-zoom { position: relative; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--bronze-soft); background: rgba(11,10,9,.65); display: flex; align-items: center; justify-content: center; opacity: 0; transform: scale(.9); transition: opacity .35s, transform .35s var(--ease); }
+        .g-item:hover .g-zoom, .g-thumb:focus-visible .g-zoom { opacity: 1; transform: none; }
+        @media (hover: none) { .g-zoom { opacity: .9; transform: none; width: 40px; height: 40px; position: absolute; right: .7rem; bottom: .7rem; } }
+        .g-cap { padding-top: 1rem; display: flex; flex-direction: column; align-items: flex-start; gap: .35rem; }
+        .g-cap h3 { font-family: var(--font-body); font-weight: 600; font-size: 1.05rem; letter-spacing: -.005em; line-height: 1.3; }
+        .g-cap .d { font-size: .9rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .empty { padding: 3.2rem 1.5rem; text-align: center; border: 1px dashed var(--line-strong); background: var(--charcoal); }
+        .empty h2 { font-size: 1.6rem; margin-bottom: .6rem; }
+        .empty p { margin-bottom: 1.4rem; }
+
+        /* overlay manager (lightbox + dialogs) */
+        .overlay { position: fixed; inset: 0; z-index: 1600; display: flex; align-items: center; justify-content: center; background: rgba(6,5,4,.975); overscroll-behavior: contain; animation: pageIn .25s var(--ease); }
+        .lb { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: clamp(4rem, 7vw, 4.5rem) clamp(.8rem, 5vw, 6rem) 1.2rem; }
+        .lb-main { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; width: 100%; max-width: 1200px; max-height: 100%; overflow-y: auto; }
+        .lb-media { display: flex; align-items: center; justify-content: center; max-width: 100%; position: relative; }
+        .lb-media img { max-width: 100%; max-height: calc(100vh - 16rem); max-height: calc(100dvh - 16rem); width: auto; height: auto; object-fit: contain; border: 1px solid var(--line); background: var(--charcoal); }
+        .lb-media.is-video { aspect-ratio: 16 / 9; width: min(100%, calc((100vh - 16rem) * 1.7778)); width: min(100%, calc((100dvh - 16rem) * 1.7778)); background: #000; border: 1px solid var(--line); }
+        .lb-media.is-video video, .lb-media.is-video iframe, .lb-media.is-video img { width: 100%; height: 100%; max-height: none; border: 0; background: #000; object-fit: contain; }
+        .lb-cap { width: 100%; max-width: 760px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: .5rem; }
+        .lb-cap h2 { font-size: clamp(1.3rem, 2.6vw, 1.9rem); }
+        .lb-cap .note { font-size: .9rem; color: var(--ivory); opacity: .85; border-left: 2px solid var(--bronze); background: var(--charcoal); padding: .7rem 1rem; text-align: left; max-width: 62ch; }
+        .lb-cap .note a { color: var(--bronze-soft); border-bottom: 1px solid var(--bronze); }
+        .lb-btn { position: absolute; z-index: 3; width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; background: rgba(24,22,20,.9); border: 1px solid var(--line-strong); border-radius: 50%; color: var(--ivory); cursor: pointer; transition: border-color .3s, color .3s, background .3s; }
+        .lb-btn:hover { border-color: var(--bronze); color: var(--bronze-soft); }
+        .lb-close { top: 1rem; right: 1rem; }
+        .lb-prev { left: clamp(.6rem, 2vw, 1.5rem); top: 50%; transform: translateY(-50%); }
+        .lb-next { right: clamp(.6rem, 2vw, 1.5rem); top: 50%; transform: translateY(-50%); }
+        @media (max-width: 700px) {
+            .lb { padding-bottom: 5rem; }
+            .lb-nav { top: auto; bottom: 1rem; transform: none; }
+            .lb-prev { left: 1rem; } .lb-next { right: 1rem; }
+            .lb-media img { max-height: calc(100dvh - 20rem); }
+        }
+        .ov-dialog { padding: 1rem; }
+        .dlg { width: 100%; max-width: 560px; max-height: calc(100dvh - 2rem); overflow-y: auto; background: var(--charcoal-2); border: 1px solid var(--line-strong); padding: clamp(1.4rem, 3vw, 2rem); border-radius: 2px; }
+        .dlg h2 { font-size: 1.6rem; margin-bottom: .8rem; }
+        .dlg .btn-row { margin-top: 1.4rem; }
+        .dlg textarea { min-height: 260px; font-family: var(--font-mono); font-size: .78rem; line-height: 1.5; }
+        .btn-danger { border-color: #9a4a3d; color: #e6aa9d; }
+        .btn-danger:hover { background: #9a4a3d; border-color: #9a4a3d; color: var(--ivory); }
+
+        /* admin gallery */
+        .a-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem 2rem; margin-bottom: 1.2rem; }
+        .a-head h1 { margin: 0; }
+        .a-thumb { width: 84px; height: 56px; object-fit: cover; border: 1px solid var(--line); display: block; }
+        .a-actions { display: flex; flex-wrap: wrap; gap: .4rem; }
+        .a-table td .tags { margin-top: .4rem; }
+        .miss-flag { display: none; }
+        .has-missing .miss-flag { display: inline-flex; }
+        .tag.warn { border-color: #c49a3c; color: #e3c277; }
+        .tag.hidden-tag { border-color: var(--line-strong); color: var(--taupe); }
+        .a-form { max-width: 760px; margin-top: 1.4rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.2rem; }
+        @media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } }
+        .form-help { margin-top: .45rem; font-size: .82rem; color: var(--taupe); }
+        .check { display: grid; grid-template-columns: 1.3rem 1fr; gap: .8rem; align-items: start; margin: .8rem 0; font-size: .92rem; color: var(--ivory); cursor: pointer; }
+        .check input { width: 1.2rem; height: 1.2rem; margin-top: .2rem; accent-color: var(--bronze); }
+        .check small { display: block; color: var(--taupe); font-size: .82rem; }
+        .form-errors { margin-bottom: 1.4rem; padding: 1rem 1.2rem; border-left: 2px solid #c0634f; background: #2a1714; color: #f0c9c0; font-size: .92rem; }
+        .form-errors ul { list-style: disc; padding-left: 1.1rem; margin-top: .4rem; }
+        .a-preview { display: flex; gap: 1rem; align-items: center; margin-top: .8rem; }
+        .a-preview .box { width: 160px; aspect-ratio: 16 / 10; flex-shrink: 0; border: 1px solid var(--line); background: var(--charcoal); overflow: hidden; }
+        .a-preview img { width: 100%; height: 100%; object-fit: cover; }
+        .a-preview p { font-size: .84rem; }
+        input[type="date"] { color-scheme: dark; }
+
+        /* =========================================================
+           MOTION
+           ========================================================= */
+        @keyframes pageIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+        }
+
+        /* =========================================================
+           RESPONSIVE
+           ========================================================= */
+        @media (max-width: 1000px) {
+            .about-grid, .split, .contact-grid, .watch, .cta { grid-template-columns: 1fr; }
+            .about-portrait { max-width: 480px; margin-top: 1.6rem; }
+            .sticky-col { position: static; }
+            .hero-media { width: 78%; }
+        }
+        @media (max-width: 1240px) and (min-width: 1041px) {
+            .nav-links { gap: 1.1rem; }
+            .nav-links a { letter-spacing: .08em; }
+        }
+        @media (max-width: 1040px) {
+            .mobile-toggle { display: inline-flex; }
+            .nav-links { display: none; position: absolute; top: var(--nav-h); left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; padding: .6rem var(--gutter) 1.4rem; background: rgba(11,10,9,.97); border-bottom: 1px solid var(--line); }
+            .nav-links.active { display: flex; }
+            .nav-links a { padding: 1rem 0; font-size: .86rem; border-bottom: 1px solid var(--line); }
+            .nav-links a::after { display: none; }
+            .nav-links a.nav-cta { margin-top: 1rem; text-align: center; border: 1px solid var(--bronze); color: var(--bronze-soft); padding: 1rem; }
+        }
+        @media (max-width: 760px) {
+            .hero { align-items: flex-end; }
+            .hero-media { width: 100%; bottom: auto; height: 72%; }
+            .hero-media::after {
+                background:
+                    linear-gradient(0deg, var(--obsidian) 0%, rgba(11,10,9,.82) 18%, rgba(11,10,9,.15) 62%, rgba(11,10,9,.35) 100%);
+            }
+            .hero-inner { padding-top: 46vh; }
+            .hero-actions .btn { flex: 1 1 100%; }
+            .tl-row { grid-template-columns: 1fr; }
+            .fact, .row { grid-template-columns: 1fr; gap: .3rem; }
+            .epk-cols { grid-template-columns: 1fr; }
+            /* admin: sidebar becomes a top bar */
+            .admin-shell { flex-direction: column; }
+            .admin-sidebar { position: static; width: 100%; height: auto; padding: 1rem var(--gutter); border-right: 0; border-bottom: 1px solid var(--line); }
+            .admin-sidebar .logo { margin-bottom: .8rem; }
+            .admin-nav { display: flex; gap: .4rem; overflow-x: auto; }
+            .admin-nav li { margin: 0; flex-shrink: 0; }
+            .admin-content { margin-left: 0; width: 100%; }
+            .toast-container { right: 1rem; left: 1rem; bottom: 1rem; }
+        }
+
+        /* =========================================================
+           PRINT — only the press kit prints (html.epk-printing is set while generating it)
+           ========================================================= */
+        @media print {
+            html.epk-printing, html.epk-printing body { background: #fff !important; }
+            html.epk-printing body::after { display: none !important; }
+            html.epk-printing body > *:not(.epk-root) { display: none !important; }
+            html.epk-printing .epk-root { display: block !important; position: static !important; left: auto !important; width: auto !important; zoom: 1 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <a class="skip-link" href="#app-view">Skip to content</a>
+
+    <!-- === MAIN NAVIGATION === -->
+    <header id="main-header">
+        <div class="nav-container">
+            <a href="#" onclick="router.navigate('home'); return false;" class="logo" aria-label="DJ Tash — home">DJ TASH<span>.</span></a>
+            <button class="mobile-toggle" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links" onclick="toggleMenu()"><i class="ri-menu-line" aria-hidden="true"></i></button>
+            <nav class="nav-links" id="nav-links" aria-label="Primary">
+                <a href="#" onclick="router.navigate('home'); return false;" data-page="home">Home</a>
+                <a href="#" onclick="router.navigate('about'); return false;" data-page="about">About</a>
+                <a href="#" onclick="router.navigate('music'); return false;" data-page="music">Music</a>
+                <a href="#" onclick="router.navigate('gallery'); return false;" data-page="gallery">Gallery</a>
+                <a href="#" onclick="router.navigate('brands'); return false;" data-page="brands">Brand Partnerships</a>
+                <a href="#" onclick="router.navigate('events'); return false;" data-page="events">Events</a>
+                <a href="#" onclick="router.navigate('news'); return false;" data-page="news">News</a>
+                <a href="#" onclick="router.navigate('contact'); return false;" data-page="contact" class="nav-cta">Book / Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- === VIEW CONTAINER === -->
+    <main id="app-view" tabindex="-1">
+        <noscript><p class="container sec">Please enable JavaScript to view this website.</p></noscript>
+    </main>
+
+    <!-- === FOOTER === -->
+    <footer id="site-footer">
+        <div class="container">
+            <div class="foot-grid">
+                <div>
+                    <p class="foot-logo">DJ TASH<span>.</span></p>
+                    <p class="label muted" style="margin-top:1rem;">Deep House • Afro Tech • Amapiano</p>
+                </div>
+                <div class="socials" id="footer-socials" aria-label="Social links"></div>
+            </div>
+            <div class="foot-base">
+                <p>&copy; 2026 DJ TASH SA. All Rights Reserved. &nbsp;•&nbsp; Johannesburg, South Africa.</p>
+                <button class="btn btn-small" type="button" onclick="toggleAdminView()">Admin Login</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- === TOAST CONTAINER === -->
+    <div class="toast-container" id="toast-container" role="status" aria-live="polite"></div>
+
+    <!-- QR Code Generator for JavaScript — (c) 2009 Kazuhiko Arase, MIT licence — http://www.d-project.com/ — inlined so the press kit works offline -->
+    <script>
+var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],f={},c=function(t,r){o=function(t){for(var r=new Array(t),e=0;e<t;e+=1){r[e]=new Array(t);for(var n=0;n<t;n+=1)r[e][n]=null}return r}(i=4*e+17),l(0,0),l(i-7,0),l(0,i-7),s(),h(),d(t,r),e>=7&&v(t),null==a&&(a=p(e,n,u)),w(a,r)},l=function(t,r){for(var e=-1;e<=7;e+=1)if(!(t+e<=-1||i<=t+e))for(var n=-1;n<=7;n+=1)r+n<=-1||i<=r+n||(o[t+e][r+n]=0<=e&&e<=6&&(0==n||6==n)||0<=n&&n<=6&&(0==e||6==e)||2<=e&&e<=4&&2<=n&&n<=4)},h=function(){for(var t=8;t<i-8;t+=1)null==o[t][6]&&(o[t][6]=t%2==0);for(var r=8;r<i-8;r+=1)null==o[6][r]&&(o[6][r]=r%2==0)},s=function(){for(var t=B.getPatternPosition(e),r=0;r<t.length;r+=1)for(var n=0;n<t.length;n+=1){var i=t[r],a=t[n];if(null==o[i][a])for(var u=-2;u<=2;u+=1)for(var f=-2;f<=2;f+=1)o[i+u][a+f]=-2==u||2==u||-2==f||2==f||0==u&&0==f}},v=function(t){for(var r=B.getBCHTypeNumber(e),n=0;n<18;n+=1){var a=!t&&1==(r>>n&1);o[Math.floor(n/3)][n%3+i-8-3]=a}for(n=0;n<18;n+=1){a=!t&&1==(r>>n&1);o[n%3+i-8-3][Math.floor(n/3)]=a}},d=function(t,r){for(var e=n<<3|r,a=B.getBCHTypeInfo(e),u=0;u<15;u+=1){var f=!t&&1==(a>>u&1);u<6?o[u][8]=f:u<8?o[u+1][8]=f:o[i-15+u][8]=f}for(u=0;u<15;u+=1){f=!t&&1==(a>>u&1);u<8?o[8][i-u-1]=f:u<9?o[8][15-u-1+1]=f:o[8][15-u-1]=f}o[i-8][8]=!t},w=function(t,r){for(var e=-1,n=i-1,a=7,u=0,f=B.getMaskFunction(r),c=i-1;c>0;c-=2)for(6==c&&(c-=1);;){for(var g=0;g<2;g+=1)if(null==o[n][c-g]){var l=!1;u<t.length&&(l=1==(t[u]>>>a&1)),f(n,c-g)&&(l=!l),o[n][c-g]=l,-1==(a-=1)&&(u+=1,a=7)}if((n+=e)<0||i<=n){n-=e,e=-e;break}}},p=function(t,r,e){for(var n=A.getRSBlocks(t,r),o=b(),i=0;i<e.length;i+=1){var a=e[i];o.put(a.getMode(),4),o.put(a.getLength(),B.getLengthInBits(a.getMode(),t)),a.write(o)}var u=0;for(i=0;i<n.length;i+=1)u+=n[i].dataCount;if(o.getLengthInBits()>8*u)throw"code length overflow. ("+o.getLengthInBits()+">"+8*u+")";for(o.getLengthInBits()+4<=8*u&&o.put(0,4);o.getLengthInBits()%8!=0;)o.putBit(!1);for(;!(o.getLengthInBits()>=8*u||(o.put(236,8),o.getLengthInBits()>=8*u));)o.put(17,8);return function(t,r){for(var e=0,n=0,o=0,i=new Array(r.length),a=new Array(r.length),u=0;u<r.length;u+=1){var f=r[u].dataCount,c=r[u].totalCount-f;n=Math.max(n,f),o=Math.max(o,c),i[u]=new Array(f);for(var g=0;g<i[u].length;g+=1)i[u][g]=255&t.getBuffer()[g+e];e+=f;var l=B.getErrorCorrectPolynomial(c),h=k(i[u],l.getLength()-1).mod(l);for(a[u]=new Array(l.getLength()-1),g=0;g<a[u].length;g+=1){var s=g+h.getLength()-a[u].length;a[u][g]=s>=0?h.getAt(s):0}}var v=0;for(g=0;g<r.length;g+=1)v+=r[g].totalCount;var d=new Array(v),w=0;for(g=0;g<n;g+=1)for(u=0;u<r.length;u+=1)g<i[u].length&&(d[w]=i[u][g],w+=1);for(g=0;g<o;g+=1)for(u=0;u<r.length;u+=1)g<a[u].length&&(d[w]=a[u][g],w+=1);return d}(o,n)};f.addData=function(t,r){var e=null;switch(r=r||"Byte"){case"Numeric":e=M(t);break;case"Alphanumeric":e=x(t);break;case"Byte":e=m(t);break;case"Kanji":e=L(t);break;default:throw"mode:"+r}u.push(e),a=null},f.isDark=function(t,r){if(t<0||i<=t||r<0||i<=r)throw t+","+r;return o[t][r]},f.getModuleCount=function(){return i},f.make=function(){if(e<1){for(var t=1;t<40;t++){for(var r=A.getRSBlocks(t,n),o=b(),i=0;i<u.length;i++){var a=u[i];o.put(a.getMode(),4),o.put(a.getLength(),B.getLengthInBits(a.getMode(),t)),a.write(o)}var g=0;for(i=0;i<r.length;i++)g+=r[i].dataCount;if(o.getLengthInBits()<=8*g)break}e=t}c(!1,function(){for(var t=0,r=0,e=0;e<8;e+=1){c(!0,e);var n=B.getLostPoint(f);(0==e||t>n)&&(t=n,r=e)}return r}())},f.createTableTag=function(t,r){t=t||2;var e="";e+='<table style="',e+=" border-width: 0px; border-style: none;",e+=" border-collapse: collapse;",e+=" padding: 0px; margin: "+(r=void 0===r?4*t:r)+"px;",e+='">',e+="<tbody>";for(var n=0;n<f.getModuleCount();n+=1){e+="<tr>";for(var o=0;o<f.getModuleCount();o+=1)e+='<td style="',e+=" border-width: 0px; border-style: none;",e+=" border-collapse: collapse;",e+=" padding: 0px; margin: 0px;",e+=" width: "+t+"px;",e+=" height: "+t+"px;",e+=" background-color: ",e+=f.isDark(n,o)?"#000000":"#ffffff",e+=";",e+='"/>';e+="</tr>"}return e+="</tbody>",e+="</table>"},f.createSvgTag=function(t,r,e,n){var o={};"object"==typeof arguments[0]&&(t=(o=arguments[0]).cellSize,r=o.margin,e=o.alt,n=o.title),t=t||2,r=void 0===r?4*t:r,(e="string"==typeof e?{text:e}:e||{}).text=e.text||null,e.id=e.text?e.id||"qrcode-description":null,(n="string"==typeof n?{text:n}:n||{}).text=n.text||null,n.id=n.text?n.id||"qrcode-title":null;var i,a,u,c,g=f.getModuleCount()*t+2*r,l="";for(c="l"+t+",0 0,"+t+" -"+t+",0 0,-"+t+"z ",l+='<svg version="1.1" xmlns="http://www.w3.org/2000/svg"',l+=o.scalable?"":' width="'+g+'px" height="'+g+'px"',l+=' viewBox="0 0 '+g+" "+g+'" ',l+=' preserveAspectRatio="xMinYMin meet"',l+=n.text||e.text?' role="img" aria-labelledby="'+y([n.id,e.id].join(" ").trim())+'"':"",l+=">",l+=n.text?'<title id="'+y(n.id)+'">'+y(n.text)+"</title>":"",l+=e.text?'<description id="'+y(e.id)+'">'+y(e.text)+"</description>":"",l+='<rect width="100%" height="100%" fill="white" cx="0" cy="0"/>',l+='<path d="',a=0;a<f.getModuleCount();a+=1)for(u=a*t+r,i=0;i<f.getModuleCount();i+=1)f.isDark(a,i)&&(l+="M"+(i*t+r)+","+u+c);return l+='" stroke="transparent" fill="black"/>',l+="</svg>"},f.createDataURL=function(t,r){t=t||2,r=void 0===r?4*t:r;var e=f.getModuleCount()*t+2*r,n=r,o=e-r;return I(e,e,function(r,e){if(n<=r&&r<o&&n<=e&&e<o){var i=Math.floor((r-n)/t),a=Math.floor((e-n)/t);return f.isDark(a,i)?0:1}return 1})},f.createImgTag=function(t,r,e){t=t||2,r=void 0===r?4*t:r;var n=f.getModuleCount()*t+2*r,o="";return o+="<img",o+=' src="',o+=f.createDataURL(t,r),o+='"',o+=' width="',o+=n,o+='"',o+=' height="',o+=n,o+='"',e&&(o+=' alt="',o+=y(e),o+='"'),o+="/>"};var y=function(t){for(var r="",e=0;e<t.length;e+=1){var n=t.charAt(e);switch(n){case"<":r+="&lt;";break;case">":r+="&gt;";break;case"&":r+="&amp;";break;case'"':r+="&quot;";break;default:r+=n}}return r};return f.createASCII=function(t,r){if((t=t||1)<2)return function(t){t=void 0===t?2:t;var r,e,n,o,i,a=1*f.getModuleCount()+2*t,u=t,c=a-t,g={"██":"█","█ ":"▀"," █":"▄","  ":" "},l={"██":"▀","█ ":"▀"," █":" ","  ":" "},h="";for(r=0;r<a;r+=2){for(n=Math.floor((r-u)/1),o=Math.floor((r+1-u)/1),e=0;e<a;e+=1)i="█",u<=e&&e<c&&u<=r&&r<c&&f.isDark(n,Math.floor((e-u)/1))&&(i=" "),u<=e&&e<c&&u<=r+1&&r+1<c&&f.isDark(o,Math.floor((e-u)/1))?i+=" ":i+="█",h+=t<1&&r+1>=c?l[i]:g[i];h+="\n"}return a%2&&t>0?h.substring(0,h.length-a-1)+Array(a+1).join("▀"):h.substring(0,h.length-1)}(r);t-=1,r=void 0===r?2*t:r;var e,n,o,i,a=f.getModuleCount()*t+2*r,u=r,c=a-r,g=Array(t+1).join("██"),l=Array(t+1).join("  "),h="",s="";for(e=0;e<a;e+=1){for(o=Math.floor((e-u)/t),s="",n=0;n<a;n+=1)i=1,u<=n&&n<c&&u<=e&&e<c&&f.isDark(o,Math.floor((n-u)/t))&&(i=0),s+=i?g:l;for(o=0;o<t;o+=1)h+=s+"\n"}return h.substring(0,h.length-1)},f.renderTo2dContext=function(t,r){r=r||2;for(var e=f.getModuleCount(),n=0;n<e;n++)for(var o=0;o<e;o++)t.fillStyle=f.isDark(n,o)?"black":"white",t.fillRect(n*r,o*r,r,r)},f};t.stringToBytes=(t.stringToBytesFuncs={default:function(t){for(var r=[],e=0;e<t.length;e+=1){var n=t.charCodeAt(e);r.push(255&n)}return r}}).default,t.createStringToBytes=function(t,r){var e=function(){for(var e=S(t),n=function(){var t=e.read();if(-1==t)throw"eof";return t},o=0,i={};;){var a=e.read();if(-1==a)break;var u=n(),f=n()<<8|n();i[String.fromCharCode(a<<8|u)]=f,o+=1}if(o!=r)throw o+" != "+r;return i}(),n="?".charCodeAt(0);return function(t){for(var r=[],o=0;o<t.length;o+=1){var i=t.charCodeAt(o);if(i<128)r.push(i);else{var a=e[t.charAt(o)];"number"==typeof a?(255&a)==a?r.push(a):(r.push(a>>>8),r.push(255&a)):r.push(n)}}return r}};var r,e,n,o,i,a=1,u=2,f=4,c=8,g={L:1,M:0,Q:3,H:2},l=0,h=1,s=2,v=3,d=4,w=5,p=6,y=7,B=(r=[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],e=1335,n=7973,i=function(t){for(var r=0;0!=t;)r+=1,t>>>=1;return r},(o={}).getBCHTypeInfo=function(t){for(var r=t<<10;i(r)-i(e)>=0;)r^=e<<i(r)-i(e);return 21522^(t<<10|r)},o.getBCHTypeNumber=function(t){for(var r=t<<12;i(r)-i(n)>=0;)r^=n<<i(r)-i(n);return t<<12|r},o.getPatternPosition=function(t){return r[t-1]},o.getMaskFunction=function(t){switch(t){case l:return function(t,r){return(t+r)%2==0};case h:return function(t,r){return t%2==0};case s:return function(t,r){return r%3==0};case v:return function(t,r){return(t+r)%3==0};case d:return function(t,r){return(Math.floor(t/2)+Math.floor(r/3))%2==0};case w:return function(t,r){return t*r%2+t*r%3==0};case p:return function(t,r){return(t*r%2+t*r%3)%2==0};case y:return function(t,r){return(t*r%3+(t+r)%2)%2==0};default:throw"bad maskPattern:"+t}},o.getErrorCorrectPolynomial=function(t){for(var r=k([1],0),e=0;e<t;e+=1)r=r.multiply(k([1,C.gexp(e)],0));return r},o.getLengthInBits=function(t,r){if(1<=r&&r<10)switch(t){case a:return 10;case u:return 9;case f:case c:return 8;default:throw"mode:"+t}else if(r<27)switch(t){case a:return 12;case u:return 11;case f:return 16;case c:return 10;default:throw"mode:"+t}else{if(!(r<41))throw"type:"+r;switch(t){case a:return 14;case u:return 13;case f:return 16;case c:return 12;default:throw"mode:"+t}}},o.getLostPoint=function(t){for(var r=t.getModuleCount(),e=0,n=0;n<r;n+=1)for(var o=0;o<r;o+=1){for(var i=0,a=t.isDark(n,o),u=-1;u<=1;u+=1)if(!(n+u<0||r<=n+u))for(var f=-1;f<=1;f+=1)o+f<0||r<=o+f||0==u&&0==f||a==t.isDark(n+u,o+f)&&(i+=1);i>5&&(e+=3+i-5)}for(n=0;n<r-1;n+=1)for(o=0;o<r-1;o+=1){var c=0;t.isDark(n,o)&&(c+=1),t.isDark(n+1,o)&&(c+=1),t.isDark(n,o+1)&&(c+=1),t.isDark(n+1,o+1)&&(c+=1),0!=c&&4!=c||(e+=3)}for(n=0;n<r;n+=1)for(o=0;o<r-6;o+=1)t.isDark(n,o)&&!t.isDark(n,o+1)&&t.isDark(n,o+2)&&t.isDark(n,o+3)&&t.isDark(n,o+4)&&!t.isDark(n,o+5)&&t.isDark(n,o+6)&&(e+=40);for(o=0;o<r;o+=1)for(n=0;n<r-6;n+=1)t.isDark(n,o)&&!t.isDark(n+1,o)&&t.isDark(n+2,o)&&t.isDark(n+3,o)&&t.isDark(n+4,o)&&!t.isDark(n+5,o)&&t.isDark(n+6,o)&&(e+=40);var g=0;for(o=0;o<r;o+=1)for(n=0;n<r;n+=1)t.isDark(n,o)&&(g+=1);return e+=Math.abs(100*g/r/r-50)/5*10},o),C=function(){for(var t=new Array(256),r=new Array(256),e=0;e<8;e+=1)t[e]=1<<e;for(e=8;e<256;e+=1)t[e]=t[e-4]^t[e-5]^t[e-6]^t[e-8];for(e=0;e<255;e+=1)r[t[e]]=e;var n={glog:function(t){if(t<1)throw"glog("+t+")";return r[t]},gexp:function(r){for(;r<0;)r+=255;for(;r>=256;)r-=255;return t[r]}};return n}();function k(t,r){if(void 0===t.length)throw t.length+"/"+r;var e=function(){for(var e=0;e<t.length&&0==t[e];)e+=1;for(var n=new Array(t.length-e+r),o=0;o<t.length-e;o+=1)n[o]=t[o+e];return n}(),n={getAt:function(t){return e[t]},getLength:function(){return e.length},multiply:function(t){for(var r=new Array(n.getLength()+t.getLength()-1),e=0;e<n.getLength();e+=1)for(var o=0;o<t.getLength();o+=1)r[e+o]^=C.gexp(C.glog(n.getAt(e))+C.glog(t.getAt(o)));return k(r,0)},mod:function(t){if(n.getLength()-t.getLength()<0)return n;for(var r=C.glog(n.getAt(0))-C.glog(t.getAt(0)),e=new Array(n.getLength()),o=0;o<n.getLength();o+=1)e[o]=n.getAt(o);for(o=0;o<t.getLength();o+=1)e[o]^=C.gexp(C.glog(t.getAt(o))+r);return k(e,0).mod(t)}};return n}var A=function(){var t=[[1,26,19],[1,26,16],[1,26,13],[1,26,9],[1,44,34],[1,44,28],[1,44,22],[1,44,16],[1,70,55],[1,70,44],[2,35,17],[2,35,13],[1,100,80],[2,50,32],[2,50,24],[4,25,9],[1,134,108],[2,67,43],[2,33,15,2,34,16],[2,33,11,2,34,12],[2,86,68],[4,43,27],[4,43,19],[4,43,15],[2,98,78],[4,49,31],[2,32,14,4,33,15],[4,39,13,1,40,14],[2,121,97],[2,60,38,2,61,39],[4,40,18,2,41,19],[4,40,14,2,41,15],[2,146,116],[3,58,36,2,59,37],[4,36,16,4,37,17],[4,36,12,4,37,13],[2,86,68,2,87,69],[4,69,43,1,70,44],[6,43,19,2,44,20],[6,43,15,2,44,16],[4,101,81],[1,80,50,4,81,51],[4,50,22,4,51,23],[3,36,12,8,37,13],[2,116,92,2,117,93],[6,58,36,2,59,37],[4,46,20,6,47,21],[7,42,14,4,43,15],[4,133,107],[8,59,37,1,60,38],[8,44,20,4,45,21],[12,33,11,4,34,12],[3,145,115,1,146,116],[4,64,40,5,65,41],[11,36,16,5,37,17],[11,36,12,5,37,13],[5,109,87,1,110,88],[5,65,41,5,66,42],[5,54,24,7,55,25],[11,36,12,7,37,13],[5,122,98,1,123,99],[7,73,45,3,74,46],[15,43,19,2,44,20],[3,45,15,13,46,16],[1,135,107,5,136,108],[10,74,46,1,75,47],[1,50,22,15,51,23],[2,42,14,17,43,15],[5,150,120,1,151,121],[9,69,43,4,70,44],[17,50,22,1,51,23],[2,42,14,19,43,15],[3,141,113,4,142,114],[3,70,44,11,71,45],[17,47,21,4,48,22],[9,39,13,16,40,14],[3,135,107,5,136,108],[3,67,41,13,68,42],[15,54,24,5,55,25],[15,43,15,10,44,16],[4,144,116,4,145,117],[17,68,42],[17,50,22,6,51,23],[19,46,16,6,47,17],[2,139,111,7,140,112],[17,74,46],[7,54,24,16,55,25],[34,37,13],[4,151,121,5,152,122],[4,75,47,14,76,48],[11,54,24,14,55,25],[16,45,15,14,46,16],[6,147,117,4,148,118],[6,73,45,14,74,46],[11,54,24,16,55,25],[30,46,16,2,47,17],[8,132,106,4,133,107],[8,75,47,13,76,48],[7,54,24,22,55,25],[22,45,15,13,46,16],[10,142,114,2,143,115],[19,74,46,4,75,47],[28,50,22,6,51,23],[33,46,16,4,47,17],[8,152,122,4,153,123],[22,73,45,3,74,46],[8,53,23,26,54,24],[12,45,15,28,46,16],[3,147,117,10,148,118],[3,73,45,23,74,46],[4,54,24,31,55,25],[11,45,15,31,46,16],[7,146,116,7,147,117],[21,73,45,7,74,46],[1,53,23,37,54,24],[19,45,15,26,46,16],[5,145,115,10,146,116],[19,75,47,10,76,48],[15,54,24,25,55,25],[23,45,15,25,46,16],[13,145,115,3,146,116],[2,74,46,29,75,47],[42,54,24,1,55,25],[23,45,15,28,46,16],[17,145,115],[10,74,46,23,75,47],[10,54,24,35,55,25],[19,45,15,35,46,16],[17,145,115,1,146,116],[14,74,46,21,75,47],[29,54,24,19,55,25],[11,45,15,46,46,16],[13,145,115,6,146,116],[14,74,46,23,75,47],[44,54,24,7,55,25],[59,46,16,1,47,17],[12,151,121,7,152,122],[12,75,47,26,76,48],[39,54,24,14,55,25],[22,45,15,41,46,16],[6,151,121,14,152,122],[6,75,47,34,76,48],[46,54,24,10,55,25],[2,45,15,64,46,16],[17,152,122,4,153,123],[29,74,46,14,75,47],[49,54,24,10,55,25],[24,45,15,46,46,16],[4,152,122,18,153,123],[13,74,46,32,75,47],[48,54,24,14,55,25],[42,45,15,32,46,16],[20,147,117,4,148,118],[40,75,47,7,76,48],[43,54,24,22,55,25],[10,45,15,67,46,16],[19,148,118,6,149,119],[18,75,47,31,76,48],[34,54,24,34,55,25],[20,45,15,61,46,16]],r=function(t,r){var e={};return e.totalCount=t,e.dataCount=r,e},e={};return e.getRSBlocks=function(e,n){var o=function(r,e){switch(e){case g.L:return t[4*(r-1)+0];case g.M:return t[4*(r-1)+1];case g.Q:return t[4*(r-1)+2];case g.H:return t[4*(r-1)+3];default:return}}(e,n);if(void 0===o)throw"bad rs block @ typeNumber:"+e+"/errorCorrectionLevel:"+n;for(var i=o.length/3,a=[],u=0;u<i;u+=1)for(var f=o[3*u+0],c=o[3*u+1],l=o[3*u+2],h=0;h<f;h+=1)a.push(r(c,l));return a},e}(),b=function(){var t=[],r=0,e={getBuffer:function(){return t},getAt:function(r){var e=Math.floor(r/8);return 1==(t[e]>>>7-r%8&1)},put:function(t,r){for(var n=0;n<r;n+=1)e.putBit(1==(t>>>r-n-1&1))},getLengthInBits:function(){return r},putBit:function(e){var n=Math.floor(r/8);t.length<=n&&t.push(0),e&&(t[n]|=128>>>r%8),r+=1}};return e},M=function(t){var r=a,e=t,n={getMode:function(){return r},getLength:function(t){return e.length},write:function(t){for(var r=e,n=0;n+2<r.length;)t.put(o(r.substring(n,n+3)),10),n+=3;n<r.length&&(r.length-n==1?t.put(o(r.substring(n,n+1)),4):r.length-n==2&&t.put(o(r.substring(n,n+2)),7))}},o=function(t){for(var r=0,e=0;e<t.length;e+=1)r=10*r+i(t.charAt(e));return r},i=function(t){if("0"<=t&&t<="9")return t.charCodeAt(0)-"0".charCodeAt(0);throw"illegal char :"+t};return n},x=function(t){var r=u,e=t,n={getMode:function(){return r},getLength:function(t){return e.length},write:function(t){for(var r=e,n=0;n+1<r.length;)t.put(45*o(r.charAt(n))+o(r.charAt(n+1)),11),n+=2;n<r.length&&t.put(o(r.charAt(n)),6)}},o=function(t){if("0"<=t&&t<="9")return t.charCodeAt(0)-"0".charCodeAt(0);if("A"<=t&&t<="Z")return t.charCodeAt(0)-"A".charCodeAt(0)+10;switch(t){case" ":return 36;case"$":return 37;case"%":return 38;case"*":return 39;case"+":return 40;case"-":return 41;case".":return 42;case"/":return 43;case":":return 44;default:throw"illegal char :"+t}};return n},m=function(r){var e=f,n=t.stringToBytes(r),o={getMode:function(){return e},getLength:function(t){return n.length},write:function(t){for(var r=0;r<n.length;r+=1)t.put(n[r],8)}};return o},L=function(r){var e=c,n=t.stringToBytesFuncs.SJIS;if(!n)throw"sjis not supported.";!function(){var t=n("友");if(2!=t.length||38726!=(t[0]<<8|t[1]))throw"sjis not supported."}();var o=n(r),i={getMode:function(){return e},getLength:function(t){return~~(o.length/2)},write:function(t){for(var r=o,e=0;e+1<r.length;){var n=(255&r[e])<<8|255&r[e+1];if(33088<=n&&n<=40956)n-=33088;else{if(!(57408<=n&&n<=60351))throw"illegal char at "+(e+1)+"/"+n;n-=49472}n=192*(n>>>8&255)+(255&n),t.put(n,13),e+=2}if(e<r.length)throw"illegal char at "+(e+1)}};return i},D=function(){var t=[],r={writeByte:function(r){t.push(255&r)},writeShort:function(t){r.writeByte(t),r.writeByte(t>>>8)},writeBytes:function(t,e,n){e=e||0,n=n||t.length;for(var o=0;o<n;o+=1)r.writeByte(t[o+e])},writeString:function(t){for(var e=0;e<t.length;e+=1)r.writeByte(t.charCodeAt(e))},toByteArray:function(){return t},toString:function(){var r="";r+="[";for(var e=0;e<t.length;e+=1)e>0&&(r+=","),r+=t[e];return r+="]"}};return r},S=function(t){var r=t,e=0,n=0,o=0,i={read:function(){for(;o<8;){if(e>=r.length){if(0==o)return-1;throw"unexpected end of file./"+o}var t=r.charAt(e);if(e+=1,"="==t)return o=0,-1;t.match(/^\s$/)||(n=n<<6|a(t.charCodeAt(0)),o+=6)}var i=n>>>o-8&255;return o-=8,i}},a=function(t){if(65<=t&&t<=90)return t-65;if(97<=t&&t<=122)return t-97+26;if(48<=t&&t<=57)return t-48+52;if(43==t)return 62;if(47==t)return 63;throw"c:"+t};return i},I=function(t,r,e){for(var n=function(t,r){var e=t,n=r,o=new Array(t*r),i={setPixel:function(t,r,n){o[r*e+t]=n},write:function(t){t.writeString("GIF87a"),t.writeShort(e),t.writeShort(n),t.writeByte(128),t.writeByte(0),t.writeByte(0),t.writeByte(0),t.writeByte(0),t.writeByte(0),t.writeByte(255),t.writeByte(255),t.writeByte(255),t.writeString(","),t.writeShort(0),t.writeShort(0),t.writeShort(e),t.writeShort(n),t.writeByte(0);var r=a(2);t.writeByte(2);for(var o=0;r.length-o>255;)t.writeByte(255),t.writeBytes(r,o,255),o+=255;t.writeByte(r.length-o),t.writeBytes(r,o,r.length-o),t.writeByte(0),t.writeString(";")}},a=function(t){for(var r=1<<t,e=1+(1<<t),n=t+1,i=u(),a=0;a<r;a+=1)i.add(String.fromCharCode(a));i.add(String.fromCharCode(r)),i.add(String.fromCharCode(e));var f,c,g,l=D(),h=(f=l,c=0,g=0,{write:function(t,r){if(t>>>r!=0)throw"length over";for(;c+r>=8;)f.writeByte(255&(t<<c|g)),r-=8-c,t>>>=8-c,g=0,c=0;g|=t<<c,c+=r},flush:function(){c>0&&f.writeByte(g)}});h.write(r,n);var s=0,v=String.fromCharCode(o[s]);for(s+=1;s<o.length;){var d=String.fromCharCode(o[s]);s+=1,i.contains(v+d)?v+=d:(h.write(i.indexOf(v),n),i.size()<4095&&(i.size()==1<<n&&(n+=1),i.add(v+d)),v=d)}return h.write(i.indexOf(v),n),h.write(e,n),h.flush(),l.toByteArray()},u=function(){var t={},r=0,e={add:function(n){if(e.contains(n))throw"dup key:"+n;t[n]=r,r+=1},size:function(){return r},indexOf:function(r){return t[r]},contains:function(r){return void 0!==t[r]}};return e};return i}(t,r),o=0;o<r;o+=1)for(var i=0;i<t;i+=1)n.setPixel(i,o,e(i,o));var a=D();n.write(a);for(var u=function(){var t=0,r=0,e=0,n="",o={},i=function(t){n+=String.fromCharCode(a(63&t))},a=function(t){if(t<0);else{if(t<26)return 65+t;if(t<52)return t-26+97;if(t<62)return t-52+48;if(62==t)return 43;if(63==t)return 47}throw"n:"+t};return o.writeByte=function(n){for(t=t<<8|255&n,r+=8,e+=1;r>=6;)i(t>>>r-6),r-=6},o.flush=function(){if(r>0&&(i(t<<6-r),t=0,r=0),e%3!=0)for(var o=3-e%3,a=0;a<o;a+=1)n+="="},o.toString=function(){return n},o}(),f=a.toByteArray(),c=0;c<f.length;c+=1)u.writeByte(f[c]);return u.flush(),"data:image/gif;base64,"+u};return t}();qrcode.stringToBytesFuncs["UTF-8"]=function(t){return function(t){for(var r=[],e=0;e<t.length;e++){var n=t.charCodeAt(e);n<128?r.push(n):n<2048?r.push(192|n>>6,128|63&n):n<55296||n>=57344?r.push(224|n>>12,128|n>>6&63,128|63&n):(e++,n=65536+((1023&n)<<10|1023&t.charCodeAt(e)),r.push(240|n>>18,128|n>>12&63,128|n>>6&63,128|63&n))}return r}(t)},function(t){"function"==typeof define&&define.amd?define([],t):"object"==typeof exports&&(module.exports=t())}(function(){return qrcode});
+    </script>
+
+    <!-- === JAVASCRIPT === -->
+    <script>
+        // =====================================================================
+        // IMAGES — every section has its own slot. Put a file path or URL in
+        // the quotes. Leave "" to show that slot's own placeholder.
+        //   Home hero ........ IMAGE_PATHS.hero
+        //   About portrait ... IMAGE_PATHS.portrait   (also used in the EPK)
+        //   Each release ..... store.music[i].art
+        //   Each news item ... store.news[i].image
+        //   Each event ....... store.events[i].image
+        // =====================================================================
+        const IMAGE_PATHS = {
+            hero: "tash12.jpeg",
+            portrait: "tash5.jpeg"
+        };
+
+        // =====================================================================
+        // GALLERY — editable starter entries
+        //
+        //  type      "image" or "video"
+        //  title     shown under the thumbnail and in the viewer
+        //  description (optional caption)      alt (screen-reader description of a photo)
+        //  category  one of GALLERY_CATEGORIES (drives the Performances / Behind the Scenes filters)
+        //  src       photo:  images/gallery/your-photo.jpg
+        //            video:  videos/gallery/your-clip.mp4  (or .webm)  OR a YouTube / Vimeo link
+        //  poster    video thumbnail, e.g. images/gallery/your-clip-poster.jpg
+        //            (YouTube links get their thumbnail automatically)
+        //  date      optional, "YYYY-MM-DD"
+        //  published false hides it from the public gallery
+        //  isSample  true shows a "Sample" tag. Delete sample entries once real media is added.
+        //
+        // Leave src "" and the item shows a labelled placeholder (nothing is loaded from disk).
+        // Admin → Gallery edits these in the browser; "Export" gives you the array to paste here.
+        // Real entry example:
+        //   { id: "photo-004", type: "image", title: "Sunday set", description: "", alt: "DJ Tash at the decks",
+        //     category: "Performances", src: "images/gallery/sunday-set.jpg", poster: "", date: "", published: true, isSample: false }
+        // =====================================================================
+        const GALLERY_VERSION = 1;               // bump after editing GALLERY_DEFAULTS so saved browser copies are replaced
+        const GALLERY_KEY = 'djtash_gallery_v1';
+        const GALLERY_CATEGORIES = ['Performances', 'Behind the Scenes'];
+        const GALLERY_DEFAULTS = [
+            { id: 'photo-001', type: 'image', title: 'DJ Tash Promotional Portrait — Sample Image', description: 'Sample image placeholder. ', alt: 'Placeholder for a DJ Tash promotional portrait', category: 'Behind the Scenes', src: 'tash1.jpg', poster: '', date: '', published: true, isSample: true },
+            { id: 'photo-002', type: 'image', title: 'DJ Tash Live Performance — Sample Image', description: 'Sample image placeholder. ', alt: 'Placeholder for a photo of DJ Tash performing live', category: 'Performances', src: 'tash6.jpeg', poster: '', date: '', published: true, isSample: true },
+            { id: 'photo-003', type: 'image', title: 'DJ Tash Behind the Scenes — Sample Image', description: 'Sample image placeholder. ', alt: 'Placeholder for a behind-the-scenes photo of DJ Tash', category: 'Behind the Scenes', src: 'tash8.jpeg', poster: '', date: '', published: true, isSample: true },
+            { id: 'video-001', type: 'video', title: 'DJ Tash DJ Set — Sample Video', description: 'Sample video placeholder. ', alt: '', category: 'Performances', src: 'vid1.mp4', poster: 'tvid1.jpg', date: '', published: true, isSample: true },
+            { id: 'video-002', type: 'video', title: 'DJ Tash Performance Highlights — Sample Video', description: 'Sample video placeholder. ', alt: '', category: 'Performances', src: 'vid2.mp4', poster: 'tvid2.jpg', date: '', published: true, isSample: true },
+            { id: 'video-003', type: 'video', title: 'DJ Tash Behind-the-Scenes Clip — Sample Video', description: 'Sample video placeholder. ', alt: '', category: 'Behind the Scenes', src: 'vid3.mp4', poster: 'tvid3.jpg', date: '', published: true, isSample: true }
+        ];
+        function normalizeGalleryItem(i) {
+            const t = v => (typeof v === 'string' ? v : '');
+            return { id: t(i.id), type: i.type === 'video' ? 'video' : 'image', title: t(i.title), description: t(i.description), alt: t(i.alt), category: t(i.category), src: t(i.src), poster: t(i.poster), date: t(i.date), published: i.published !== false, isSample: i.isSample === true };
+        }
+        function galleryDefaults() { return GALLERY_DEFAULTS.map(normalizeGalleryItem); }
+        function loadGallery() {
+            try {
+                const raw = localStorage.getItem(GALLERY_KEY);
+                if (raw) {
+                    const d = JSON.parse(raw);
+                    if (d && d.v === GALLERY_VERSION && Array.isArray(d.items) && d.items.every(i => i && typeof i.id === 'string' && (i.type === 'image' || i.type === 'video'))) {
+                        return d.items.map(normalizeGalleryItem);
+                    }
+                }
+            } catch (e) { /* storage blocked or corrupt: use the starter entries */ }
+            return galleryDefaults();
+        }
+        function persistGallery() {
+            try { localStorage.setItem(GALLERY_KEY, JSON.stringify({ v: GALLERY_VERSION, items: store.gallery })); return true; }
+            catch (e) { return false; }
+        }
+
+        // =====================================================================
+        // EPK (PRESS KIT) SETTINGS
+        // The PDF is generated from the same data as this website (biography, releases, links,
+        // timeline, contact, photos). Only the items below are EPK-specific.
+        // =====================================================================
+        const EPK = {
+            website: "",   // official website address, e.g. "https://www.yourdomain.co.za". Printed on the cover and booking page (with a QR code) once set.
+            file: "",      // optional: a finished PDF saved next to this page, e.g. "DJ-Tash-EPK.pdf". When set, the Download EPK buttons download it directly.
+            photos: ["tash3.jpg", "tash7.jpeg", "tash13.jpeg"],   // promo photos for page 4 (the hero and About portrait are used on pages 1-2). Empty = use real Gallery photos.
+            rider: ""      // technical requirements, one per line (e.g. "2 x CDJ-3000"). Left empty, the section is not printed.
+        };
+
+        // --- DATA STORE (State Management) ---
+        const store = {
+            artist: {
+                name: "Thabo Mosehla (Mthombeni)",
+                stageName: "DJ TASH",
+                genre: "Deep House • Afro Tech • Amapiano",
+                city: "Johannesburg",
+                country: "South Africa",
+                tagline: "Thabo Mosehla (Mthombeni) — a producer and DJ from Mafikeng, North West, whose Deep House, Afro Tech and Amapiano sets draw on vinyl roots and jazz influences.",
+                bioShort: "DJ TASH is a DJ and music producer whose passion for music was discovered at an early age while growing up in Mafikeng, North West. His musical talents matured in 2005 when he met DJ Xchange in Rustenburg.",
+                bioLong: "He has established a reputation in House Music circles for consistently delivering quality music, building a loyal fan base that trusts his music selections and productions. His work includes the single Blurred Lines and the single Love You, featuring Toni, a vocalist from the Vaal, South Africa.</br></br>Sound: DJ Tash specializes in Deep House, Deep Tech and Amapiano. His music incorporates a variation of creative elements and dynamic beats, and his sound reflects his influences from playing on vinyl back in the day and from jazz music.</br><br>Purpose: The purpose of his music is to reflect the world as he sees it. What sets him apart from other DJs is his style of music and his creative ingenuity.</br> <br>Goal: His long-term goal is to inspire and show the youth that nothing is impossible.</br>",
+                stats: {
+                    monthlyListeners: "TBA",
+                    instagramFollowers: "TBA",
+                    tiktokViews: "TBA",
+                    youtubeSubs: "TBA"
+                }
+            },
+            images: IMAGE_PATHS,
+            gallery: loadGallery(),
+            offerings: [
+                { title: "Club Nights & Residencies", text: "Deep House, Afro Tech and Amapiano sets." },
+                { title: "Fashion & Lifestyle Events", text: "Runway, launches and brand activations." },
+                { title: "Corporate & Private Functions", text: "Curated sets for hotels, lounges and private events." },
+                { title: "Radio & Production", text: "Radio features and production-music collaborations." }
+            ],
+            contact: { email: "djtashsa@gmail.com", phone: "061 080 7977", manager: "Vuyile Mahlumba" },
+            // Footer social links. Entries with an empty or invalid url are hidden automatically.
+            socials: [
+                { label: "Instagram", icon: "ri-instagram-line", url: "https://instagram.com/dj_tash_sa" },
+                { label: "Spotify", icon: "ri-spotify-fill", url: "https://open.spotify.com/artist/Djtash" },
+                { label: "YouTube", icon: "ri-youtube-fill", url: "https://youtube.com/@djtashsa" },
+                { label: "TikTok", icon: "ri-tiktok-fill", url: "" }
+            ],
+            youtube: "https://youtube.com/@djtashsa",
+            platforms: [
+                { label: "Spotify", icon: "ri-spotify-fill", url: "https://open.spotify.com/artist/4NIk5r2V2FdOWJ2TSQCZtT?si=QfmpsAidQNuU6adTN66MIA" },
+                { label: "Apple Music", icon: "ri-apple-fill", url: "https://music.apple.com/us/artist/dj-tash/1381380593" },
+                { label: "YouTube Music", icon: "ri-youtube-fill", url: "https://music.youtube.com/channel/UCKajPeg1JuMryFc6raF7njg?si=dLp8LfbgFW3GmMAB&drli=1" },
+                { label: "TIDAL", icon: "", url: "https://tidal.com/artist/9890778/u" },
+                { label: "Audiomack", icon: "", url: "https://audiomack.com/dj-tash-69188077125db" },
+                { label: "SoundCloud", icon: "ri-soundcloud-fill", url: "https://on.soundcloud.com/swuJ25RLWatJaAnLzF" }
+            ],
+            timeline: [
+                { label: "Current residency", title: "Resident DJ — San Deck Sandton, every Sunday", text: "Currently holds a weekly Sunday residency." },
+                { label: "2025", title: "Debut EP \"Moonlight\" Released", text: "Charted #1 on Apple Music South Africa." },
+                { label: "Live performances", title: "South African Fashion Week, Fire and Ice (Melrose Arch), Crown Plaza Rosebank", text: "Venues and events where DJ Tash has played." },
+                { label: "2017 tour", title: "Tours with Soulstar — Soulistic Wave era", text: "Toured with Soulstar and the whole Soulistic Stable, including Da Capo and Black Coffee." },
+                { label: "UK release", title: "Featured on KPM Music production album (London)", text: "Three songs on the album, featuring Soulstar and Neil Solomons." },
+                { label: "2005 milestone", title: "Meets DJ Xchange in Rustenburg", text: "His musical talents matured after meeting DJ Xchange. Passion for music had been discovered earlier while growing up in Mafikeng, North West." }
+            ],
+            // `link`: a track-specific listening URL. The Listen link only appears once it is a real
+            // link (not just a platform home page), so you can paste each release's URL here later.
+            music: [
+                { id: 1, title: "Son Uwa EP (ft Classic Tank)", date: "2025", art: "Sonuwa.jpg", genre: "HOUSE • LATEST EP", link: "https://open.spotify.com/album/6rei3kpZGxGLtnEspieHzu?si=xvXCPQKfQt-VC_8GQDDz1A" },
+                { id: 2, title: "Moonlight EP", date: "2025", art: "track.jpg", genre: "HOUSE •FIRST EP", link: "https://open.spotify.com/track/2EdSzN1MCuKSRH0rMt3yt7?si=19ff813c58d44de6" },
+                { id: 3, title: "Blurred Lines", date: "2020", art: "track3.jpg", genre: "HOUSE • FIRST SINGLE", link: "https://open.spotify.com/album/3Y8oaqW3fsTwuyurMNcGly?si=is9dNt3QRQGmqpaRcRZtkA" }
+            ],
+            // `sample: true` = placeholder listing, never shown as a confirmed booking.
+            // `recurring` events show a weekly badge instead of a date.
+            // `ticketLink` only shows a Get Tickets button once it is a real ticket-page URL.
+            events: [
+                { id: 1, name: "Sunday Residency — San Deck Sandton", date: "Oct 18, 2026", venue: "Sandton, Gauteng", type: "Weekly Sunday residency. Deep House, Afro Tech and Amapiano", category: "Residency", description: "Weekly Sunday residency. Deep House, Afro Tech and Amapiano.", recurring: ["SUN", "Weekly"], image: "tash3.jpg", ticketLink: "https://tickets.com/" },
+                { id: 2, name: "New Year's Eve Gala", date: "Dec 31, 2024", venue: "The Maslow Hotel, Joburg", type: "Corporate", category: "Corporate", description: "", sample: true, image: "tash13.jpeg", ticketLink: "https://tickets.com/" },
+                { id: 3, name: "Rise Up Concert", date: "Jan 15, 2025", venue: "Sun Arena, Pretoria", type: "Concert", category: "Concert", description: "", sample: true, image: "tash7.jpeg", ticketLink: "https://tickets.com/" }
+            ],
+            news: [
+                { id: 1, title: "DJ Tash secures a residency at San Deck Sandton", date: "Oct 12, 2024", category: "Career", image: "tash13.jpeg", excerpt: "In a landmark move, DJ Tash has partnered with San Deck Sandton to reach various audiences." },
+                { id: 2, title: "Behind the Scenes: 'Love You' Video Shoot", date: "Sep 28, 2024", category: "Lifestyle", image: "tash14.jpeg", excerpt: "Video vixens wanted for upcoming music video shoot in Maboneng." }
+            ],
+            partners: {
+                demographics: [
+                    { label: "Age 18-24", value: "45%" },
+                    { label: "Age 25-34", value: "35%" },
+                    { label: "South Africa", value: "60%" },
+                    { label: "International", value: "40%" }
+                ],
+                previous: [
+                    { brand: "Mzansi Brew", year: "2023", desc: "Summer Campaign Brand Ambassador", sample: true },
+                    { brand: "Vodacom", year: "2022", desc: "Night Out Concert Series Headliner", sample: true }
+                ]
+            },
+            analytics: {
+                views: [1200, 1900, 3000, 5000, 2000, 3000], // Last 6 months
+                epks: 45,
+                bookings: 12
+            }
+        };
+
+        // --- HELPERS ---
+        const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+        // A "real" link points past a platform's home page (so bare https://open.spotify.com/ is not real).
+        const isRealLink = u => { try { const x = new URL(u); return /^https?:$/.test(x.protocol) && x.pathname.replace(/\//g, '') !== ''; } catch (e) { return false; } };
+        const isUrl = u => { try { return /^https?:$/.test(new URL(u).protocol); } catch (e) { return false; } };
+
+        // Image placeholders: one dedicated tile per section.
+        const PH = {
+            hero:     { w: 1200, h: 1500, label: 'HERO PORTRAIT' },
+            portrait: { w: 800,  h: 1000, label: 'ARTIST PORTRAIT' },
+            cover:    { w: 800,  h: 800,  label: 'COVER ARTWORK' },
+            news:     { w: 1000, h: 625,  label: 'NEWS IMAGE' },
+            event:    { w: 1000, h: 625,  label: 'EVENT IMAGE' },
+            gallery:  { w: 1000, h: 750,  label: 'GALLERY PHOTO' },
+            video:    { w: 1280, h: 720,  label: 'VIDEO THUMBNAIL', hint: 'PLACEHOLDER — ADD A POSTER IMAGE' }
+        };
+        const phCache = {};
+        function placeholder(kind) {
+            if (phCache[kind]) return phCache[kind];
+            const p = PH[kind] || { w: 800, h: 800, label: 'IMAGE' };
+            const cx = p.w / 2, cy = p.h / 2 - p.h * 0.03, r = Math.min(p.w, p.h) * 0.2;
+            const fs = Math.round(Math.min(p.w, p.h) * 0.032);
+            const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${p.w}" height="${p.h}" viewBox="0 0 ${p.w} ${p.h}">
+                <defs><radialGradient id="g" cx="50%" cy="40%" r="80%"><stop offset="0" stop-color="#2f2a25"/><stop offset="1" stop-color="#12100e"/></radialGradient></defs>
+                <rect width="${p.w}" height="${p.h}" fill="url(#g)"/>
+                <g fill="none" stroke="#B88A5B" stroke-opacity=".38" stroke-width="2">
+                    <circle cx="${cx}" cy="${cy}" r="${r}"/><circle cx="${cx}" cy="${cy}" r="${r * 0.78}"/><circle cx="${cx}" cy="${cy}" r="${r * 0.56}"/><circle cx="${cx}" cy="${cy}" r="${r * 0.34}" stroke-opacity=".6"/>
+                </g>
+                <circle cx="${cx}" cy="${cy}" r="${r * 0.06}" fill="#B88A5B" fill-opacity=".7"/>
+                <text x="${cx}" y="${cy + r + fs * 3}" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="${fs}" letter-spacing="${fs * 0.28}" fill="#A29686">${p.label}</text>
+                <text x="${cx}" y="${cy + r + fs * 4.6}" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="${Math.round(fs * 0.7)}" letter-spacing="${fs * 0.14}" fill="#7f7569">${p.hint || 'PLACEHOLDER — ADD YOUR PHOTO'}</text>
+            </svg>`;
+            return (phCache[kind] = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg));
+        }
+        // A missing or broken file falls back to its own section's placeholder, never to another image.
+        function phFallback(img, kind) {
+            if (img.dataset.ph) return;
+            img.dataset.ph = '1';
+            img.src = placeholder(kind);
+            img.classList.add('is-placeholder');
+            const row = img.closest('[data-media-row]');     // admin list: flag rows whose file is missing
+            if (row) row.classList.add('has-missing');
+        }
+        function imgTag(src, alt, kind, attrs) {
+            const empty = !src;
+            return `<img src="${empty ? placeholder(kind) : esc(src)}" alt="${esc(alt)}" ${empty ? 'class="is-placeholder" data-ph="1"' : ''} ${attrs || ''} onerror="phFallback(this,'${kind}')">`;
+        }
+
+        const waveBars = [5, 9, 14, 8, 18, 11, 6, 15, 20, 12, 7, 16, 10, 19, 13, 6, 9, 17, 11, 5, 8, 14, 10, 6];
+        function wave(cls) {
+            return `<svg class="${cls || 'wave'}" viewBox="0 0 ${waveBars.length * 5} 22" preserveAspectRatio="none" aria-hidden="true" focusable="false">${waveBars.map((h, i) => `<rect x="${i * 5}" y="${(22 - h) / 2}" width="2" height="${h}" rx="1"/>`).join('')}</svg>`;
+        }
+
+        // Biography text uses </br> markers; split into paragraphs, and Sound/Purpose/Goal into fact rows.
+        function bioParas() {
+            return store.artist.bioLong.split(/<\/?br\s*\/?>/i).map(s => s.trim()).filter(Boolean);
+        }
+        function bioHTML() {
+            const plain = [], facts = [];
+            bioParas().forEach(p => {
+                const m = p.match(/^(Sound|Purpose|Goal):\s*([\s\S]*)$/);
+                m ? facts.push(`<div class="fact"><dt class="label">${m[1]}</dt><dd>${esc(m[2])}</dd></div>`) : plain.push(`<p class="body-p">${esc(p)}</p>`);
+            });
+            return plain.join('') + (facts.length ? `<dl class="facts">${facts.join('')}</dl>` : '');
+        }
+
+        const MONTHS = { jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11 };
+        function parseDate(s) {
+            const m = String(s).match(/([A-Za-z]{3})[a-z]*\.?\s+(\d{1,2}),?\s+(\d{4})/);
+            return m ? new Date(+m[3], MONTHS[m[1].toLowerCase()], +m[2]) : null;
+        }
+
+        const pageHead = (kicker, title, lede) => `
+            <header class="page-head">
+                <p class="kicker">${kicker}</p>
+                <h1>${title}</h1>
+                ${lede ? `<p class="lede">${lede}</p>` : ''}
+            </header>`;
+
+        const watchPanel = heading => `
+            <div class="watch">
+                <div>
+                    <p class="label">YouTube</p>
+                    <h3>${heading}</h3>
+                </div>
+                <div class="watch-side">
+                    ${wave('wave-big')}
+                    <a class="btn" href="${esc(store.youtube)}" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i> Watch on YouTube</a>
+                </div>
+            </div>`;
+
+        // --- COMPONENT RENDERERS ---
+        const Components = {
+            hero: () => `
+                <section class="hero" aria-labelledby="hero-title">
+                    <div class="hero-media">${imgTag(store.images.hero, 'Portrait of ' + store.artist.stageName, 'hero', 'fetchpriority="high"')}</div>
+                    <div class="hero-glow"></div>
+                    <div class="container hero-inner">
+                        <p class="kicker">Deep House DJ &amp; Electronic Music Artist</p>
+                        <h1 id="hero-title"><span class="dj">DJ</span> ${esc(store.artist.stageName.replace(/^DJ\s+/i, ''))}</h1>
+                        <p class="hero-tag">Deep rhythms. Warm textures. Soul after dark.</p>
+                        <p class="hero-sub">${esc(store.artist.tagline)}</p>
+                        <div class="hero-actions">
+                            <button type="button" onclick="router.navigate('music')" class="btn btn-primary">Explore Music</button>
+                            <button type="button" onclick="router.navigate('contact')" class="btn">Book the DJ</button>
+                        </div>
+                        <div class="hero-links">
+                            <button type="button" onclick="generateEPK('dark', false, true)" class="text-link">Download EPK</button>
+                            <button type="button" onclick="router.navigate('brands')" class="text-link">Work with me</button>
+                        </div>
+                        <div class="hero-foot">
+                            <span class="label"><i class="ri-map-pin-line" aria-hidden="true"></i> ${esc(store.artist.city)}, ${esc(store.artist.country)}</span>
+                            <span class="label muted">${wave()}&nbsp; ${esc(store.artist.genre)}</span>
+                        </div>
+                    </div>
+                </section>
+            `,
+            about: (level) => {
+                const H = level || 'h2';
+                return `
+                <section class="sec container" aria-labelledby="about-title">
+                    <div class="about-grid">
+                        <figure class="about-portrait">
+                            <div class="ph-frame ratio-portrait">${imgTag(store.images.portrait, 'Portrait of ' + store.artist.stageName, 'portrait', 'loading="lazy"')}</div>
+                            <figcaption class="label muted">${esc(store.artist.stageName)} &nbsp;/&nbsp; ${esc(store.artist.city)}</figcaption>
+                        </figure>
+                        <div class="about-copy">
+                            <p class="kicker">About</p>
+                            <${H} id="about-title">The story behind the sound.</${H}>
+                            <p class="label name">${esc(store.artist.name)}</p>
+                            <p class="lede">${esc(store.artist.bioShort)}</p>
+                            ${bioHTML()}
+                        </div>
+                    </div>
+                </section>
+
+                <section class="sec-tight band-charcoal" aria-labelledby="timeline-title">
+                    <div class="container">
+                        <p class="kicker">Milestones</p>
+                        <h2 id="timeline-title">Career Timeline Of Firsts</h2>
+                        <ol class="timeline">
+                            ${store.timeline.map(t => `
+                                <li class="tl-row">
+                                    <span class="label">${esc(t.label)}</span>
+                                    <div>
+                                        <h3>${esc(t.title)}</h3>
+                                        <p>${esc(t.text)}</p>
+                                    </div>
+                                </li>`).join('')}
+                        </ol>
+                    </div>
+                </section>
+            `;
+            },
+            releasesStrip: () => `
+                <section class="sec container" aria-labelledby="strip-title">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:2.4rem;">
+                        <div><p class="kicker">Music</p><h2 id="strip-title">Latest Releases</h2></div>
+                        <button type="button" class="text-link" onclick="router.navigate('music')">All music <i class="ri-arrow-right-line" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="release-grid">${store.music.map((t, i) => Components.release(t, i)).join('')}</div>
+                </section>
+            `,
+            ctaBand: () => `
+                <section class="sec band-forest" aria-labelledby="cta-title">
+                    <div class="container cta">
+                        <div>
+                            <p class="kicker">Bookings</p>
+                            <h2 id="cta-title">Bring DJ TASH to your stage.</h2>
+                            <p>Available for club nights, festivals, fashion and corporate events, and private functions.</p>
+                        </div>
+                        <div class="btn-row">
+                            <button type="button" onclick="router.navigate('contact')" class="btn btn-primary">Book the DJ</button>
+                            <button type="button" onclick="generateEPK('dark', false, true)" class="btn">Download EPK</button>
+                        </div>
+                    </div>
+                </section>
+            `,
+            release: (track, i) => `
+                <article class="release">
+                    <div class="ph-frame ratio-square">
+                        <span class="idx" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+                        ${imgTag(track.art, track.title + ' — cover art', 'cover', 'loading="lazy"')}
+                    </div>
+                    <p class="label">${esc(track.genre)}</p>
+                    <h3>${esc(track.title)}</h3>
+                    <p class="meta-line">${esc(track.date)}</p>
+                    ${isRealLink(track.link) ? `<a class="text-link" href="${esc(track.link)}" target="_blank" rel="noopener noreferrer">Listen <i class="ri-arrow-right-up-line" aria-hidden="true"></i></a>` : ''}
+                </article>
+            `,
+            music: () => `
+                <section class="container sec" style="padding-top:0;">
+                    ${pageHead('Music', 'Latest Releases')}
+                    <div class="release-grid">${store.music.map((t, i) => Components.release(t, i)).join('')}</div>
+
+                    <div class="platforms">
+                        <span class="label">Stream on all platforms</span>
+                        ${store.platforms.map(p => `<a href="${esc(p.url)}" target="_blank" rel="noopener noreferrer">${p.icon ? `<i class="${p.icon}" aria-hidden="true"></i>` : ''}${esc(p.label)}</a>`).join('')}
+                    </div>
+
+                    ${watchPanel('Live Performances')}
+                </section>
+            `,
+            gallery: () => `
+                <section class="container sec" style="padding-top:0;">
+                    ${pageHead('Gallery', 'Photos &amp; Videos', 'Performances, behind-the-scenes moments and short clips.')}
+                    <div id="gallery-root">${galleryHTML()}</div>
+                </section>
+            `,
+            brands: () => `
+                <section class="container sec" style="padding-top:0;">
+                    ${pageHead('Partnerships', 'Brands &amp; Organisers', "Partner with South Africa's rising star.")}
+
+                    <div class="split">
+                        <div class="sticky-col">
+                            <h2 style="font-size:clamp(1.8rem,3.6vw,2.7rem);">Partnership opportunities</h2>
+                            <div class="opp-list">
+                                ${store.offerings.map((o, i) => `<div class="opp"><span class="label">${String(i + 1).padStart(2, '0')}</span><div><h3>${esc(o.title)}</h3><p>${esc(o.text)}</p></div></div>`).join('')}
+                            </div>
+                        </div>
+                        <div>
+                            <h2 style="font-size:clamp(1.8rem,3.6vw,2.7rem);margin-bottom:1.2rem;">Why Work With DJ Tash?</h2>
+                            <p class="lede" style="margin-bottom:1rem;">A seasoned House Music DJ trusted by loyal fans for consistently good quality music.</p>
+                            <p>Experienced in fashion, hospitality and festival-style stages, with a weekly Sunday residency in Sandton and a Friday radio show.</p>
+                            <ul class="check-list">
+                                <li><i class="ri-check-line" aria-hidden="true"></i><span>Authentic connection to SA Youth Culture</span></li>
+                                <li><i class="ri-check-line" aria-hidden="true"></i><span>Resident DJ at San Deck Sandton every Sunday</span></li>
+                                <li><i class="ri-check-line" aria-hidden="true"></i><span>Has played at South African Fashion Week, Fire and Ice (Melrose Arch) and Crown Plaza Rosebank</span></li>
+                                <li><i class="ri-check-line" aria-hidden="true"></i><span>Toured with Soulstar during the Soulistic Wave era in 2017, and the Soulistic Stable including Da Capo and Black Coffee</span></li>
+                                <li><i class="ri-check-line" aria-hidden="true"></i><span>Three songs featured on a KPM Music (London) production album with Soulstar and Neil Solomons</span></li>
+                            </ul>
+                            <button type="button" onclick="router.navigate('contact')" class="btn btn-primary">Start a Conversation <i class="ri-arrow-right-line" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="partners">
+                        <p class="kicker">Track record</p>
+                        <h2 style="font-size:clamp(1.8rem,3.6vw,2.7rem);">Previous Partnerships</h2>
+                        <div class="partner-grid">
+                            ${store.partners.previous.map(p => `
+                                <div class="partner">
+                                    <div class="tags"><span class="label">${esc(p.year)}</span>${p.sample ? '<span class="tag sample">Sample</span>' : ''}</div>
+                                    <h3>${esc(p.brand)}</h3>
+                                    <p>${esc(p.desc)}</p>
+                                </div>`).join('')}
+                        </div>
+                    </div>
+                </section>
+            `,
+            events: () => {
+                const today = new Date(); today.setHours(0, 0, 0, 0);
+                const views = store.events.map(e => {
+                    const d = parseDate(e.date);
+                    const recurring = !!e.recurring;
+                    const past = !recurring && d && d < today;
+                    const block = recurring ? e.recurring : (d ? [String(d.getDate()), d.toLocaleString('en-GB', { month: 'short' }).toUpperCase() + ' ' + d.getFullYear()] : [esc(e.date), '']);
+                    return { e, recurring, past, sample: !!e.sample, block };
+                });
+                const anySample = views.some(v => v.sample);
+                return `
+                <section class="container sec" style="padding-top:0;">
+                    ${pageHead('Events', 'Events &amp; Tours')}
+                    <!--${anySample ? '<p class="notice"><strong>Sample listings.</strong> Events tagged “Sample” are placeholders, not confirmed bookings.</p>' : ''}-->
+                    <div class="cards">
+                        ${views.map(v => {
+                            const e = v.e;
+                            const tag = v.sample ? '<span class="tag sample">Sample</span>' : v.recurring ? '<span class="tag live">Ongoing</span>' : v.past ? '<span class="tag">Past event</span>' : '<span class="tag live">Upcoming</span>';
+                            const cta = isRealLink(e.ticketLink) && !v.sample && !v.past
+                                ? `<a class="btn btn-primary btn-small" href="${esc(e.ticketLink)}" target="_blank" rel="noopener noreferrer">Get Tickets</a>`
+                                : (!v.sample && !v.past ? `<button type="button" class="btn btn-small" onclick="router.navigate('contact')">Enquire about this event</button>` : '');
+                            return `
+                            <article class="card">
+                                <div class="ph-frame ratio-wide">${imgTag(e.image, e.name, 'event', 'loading="lazy"')}</div>
+                                <div class="card-body">
+                                    <div class="event-top">
+                                        <span class="event-day">${esc(v.block[0])}</span>
+                                        <span class="label">${esc(v.block[1])}</span>
+                                    </div>
+                                    <div class="tags">${tag}<span class="tag">${esc(e.category || e.type)}</span></div>
+                                    <h3>${esc(e.name)}</h3>
+                                    <p class="event-where"><i class="ri-map-pin-line" aria-hidden="true" style="color:var(--bronze)"></i> ${esc(e.venue)}</p>
+                                    ${e.description ? `<p>${esc(e.description)}</p>` : ''}
+                                    ${cta ? `<div class="card-foot">${cta}</div>` : ''}
+                                </div>
+                            </article>`;
+                        }).join('')}
+                    </div>
+                    ${watchPanel('Event Highlights')}
+                </section>
+            `;
+            },
+            news: () => `
+                <section class="container sec" style="padding-top:0;">
+                    ${pageHead('News', 'News &amp; Updates')}
+                    <div class="cards">
+                        ${store.news.map(item => `
+                            <article class="card">
+                                <div class="ph-frame ratio-wide">${imgTag(item.image, item.title, 'news', 'loading="lazy"')}</div>
+                                <div class="card-body">
+                                    <p class="label">${esc(item.category)} &nbsp;•&nbsp; ${esc(item.date)}</p>
+                                    <h3>${esc(item.title)}</h3>
+                                    <p>${esc(item.excerpt)}</p>
+                                </div>
+                            </article>`).join('')}
+                    </div>
+                </section>
+            `,
+            contact: () => `
+                <section class="container sec" style="padding-top:0;">
+                    <div class="contact-grid">
+                        <div>
+                            <header class="page-head" style="padding-bottom:2rem;">
+                                <p class="kicker">Bookings &amp; Enquiries</p>
+                                <h1 style="max-width:12ch;">Bring DJ TASH to your stage.</h1>
+                            </header>
+                            <p class="lede" style="margin-bottom:1rem;">Official profile of DJ Tash (Thabo Mosehla). Deep House, Afro Tech and Amapiano. For bookings, press and partnerships use the form.</p>
+                            <p>Available for club nights, festivals, fashion and corporate events, and private functions.</p>
+
+                            <p class="label" style="margin-top:2rem;">Enquiries welcome from</p>
+                            <div class="audience">
+                                ${['Club owners', 'Lounge managers', 'Event organisers', 'Festival promoters', 'Music curators', 'Private clients', 'Brand collaborators'].map(a => `<span class="tag">${a}</span>`).join('')}
+                            </div>
+
+                            <dl class="rows">
+                                <div class="row"><dt class="label">Sets</dt><dd>Deep House • Afro Tech • Amapiano — resident and guest DJ slots</dd></div>
+                                <div class="row"><dt class="label">Residency</dt><dd>San Deck, Sandton — every Sunday.</dd></div>
+                                <div class="row"><dt class="label">Requirements</dt><dd>Share event details, set length and budget range in the form and management will respond.</dd></div>
+                            </dl>
+
+                            <div class="mgmt">
+                                <p class="label">Management</p>
+                                <h3>${esc(store.contact.manager)}</h3>
+                                <ul>
+                                    <li><a class="inline" href="tel:${esc(store.contact.phone.replace(/\s+/g, ''))}"><i class="ri-phone-line" aria-hidden="true"></i> ${esc(store.contact.phone)}</a></li>
+                                    <li><a class="inline" href="mailto:${esc(store.contact.email)}"><i class="ri-mail-line" aria-hidden="true"></i> ${esc(store.contact.email)}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <form class="form-card" onsubmit="handleFormSubmit(event)" aria-labelledby="form-title">
+                            <h2 id="form-title">Send a Message</h2>
+                            <div class="form-group">
+                                <label for="f-name">Name</label>
+                                <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="Full name or Company / Organization *">
+                            </div>
+                            <div class="form-group">
+                                <label for="f-email">Email</label>
+                                <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="Email *">
+                            </div>
+                            <div class="form-group">
+                                <label for="enquiryType">Enquiry Type</label>
+                                <select id="enquiryType" name="type">
+                                    <option>Booking (Concert/Event)</option>
+                                    <option>Brand Partnership</option>
+                                    <option>Press/Media</option>
+                                    <option>General</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="f-msg">Message</label>
+                                <textarea id="f-msg" name="message" rows="5" required placeholder="Tell us about the event, stage, set length, budget range..."></textarea>
+                            </div>
+                            <label class="consent"><input type="checkbox" name="consent" required> <span>I confirm details are accurate and consent to being contacted about this enquiry.</span></label>
+                            <button type="submit" class="btn btn-primary btn-block">Send Enquiry</button>
+                            <p class="form-note">Sending opens your email app with this enquiry pre-filled and addressed to management.</p>
+                        </form>
+                    </div>
+                </section>
+            `,
+            admin: () => `
+                <div class="admin-shell">
+                    <aside class="admin-sidebar">
+                        <span class="logo">ADMIN</span>
+                        <ul class="admin-nav">
+                            <li><a href="#" data-admin="dashboard" onclick="adminNavigate('dashboard'); return false;" class="active">Overview</a></li>
+                            <li><a href="#" data-admin="music" onclick="adminNavigate('music'); return false;">Music Management</a></li>
+                            <li><a href="#" data-admin="gallery" onclick="adminNavigate('gallery'); return false;">Gallery</a></li>
+                            <li><a href="#" data-admin="epk" onclick="adminNavigate('epk'); return false;">EPK / Press Kit</a></li>
+                            <li><a href="#" data-admin="analytics" onclick="adminNavigate('analytics'); return false;">Analytics</a></li>
+                            <li><a href="#" onclick="router.navigate('home'); return false;">Back to Website</a></li>
+                        </ul>
+                    </aside>
+                    <div class="admin-content" id="admin-panel-content">
+                        ${Components.adminDashboard()}
+                    </div>
+                </div>
+            `,
+            adminDashboard: () => `
+                <h1>Dashboard Overview</h1>
+                <p class="demo-note">Demo figures — this dashboard is a preview and is not connected to live analytics.</p>
+                <div class="stat-grid">
+                    <div class="stat-card"><span class="stat-number">${store.analytics.epks}</span><span class="stat-label">EPK Downloads</span></div>
+                    <div class="stat-card"><span class="stat-number">${store.analytics.bookings}</span><span class="stat-label">New Enquiries</span></div>
+                    <div class="stat-card"><span class="stat-number">12.5k</span><span class="stat-label">Website Visits</span></div>
+                    <div class="stat-card"><span class="stat-number">R 45k</span><span class="stat-label">Est. Revenue</span></div>
+                </div>
+
+                <div class="card">
+                    <h3>Recent Enquiries</h3>
+                    <div class="table-wrap">
+                        <table class="a-table">
+                            <thead><tr><th scope="col">Date</th><th scope="col">Name</th><th scope="col">Type</th><th scope="col">Status</th></tr></thead>
+                            <tbody>
+                                <tr><td>Oct 12, 2024</td><td>Sarah J. (Red Bull)</td><td>Brand Partnership</td><td><span style="color: var(--success);">New</span></td></tr>
+                                <tr><td>Oct 10, 2024</td><td>Carnival City</td><td>Booking</td><td><span style="color: var(--bronze-soft);">Pending</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `
+        };
+
+        // --- ROUTER LOGIC ---
+        const router = {
+            currentPage: 'home',
+            navigate: (page) => {
+                const app = document.getElementById('app-view');
+                const header = document.getElementById('main-header');
+                const footer = document.getElementById('site-footer');
+                Overlay.close(true);
+                router.currentPage = page;
+
+                if (page === 'admin') {
+                    header.classList.add('hidden');
+                    footer.classList.add('hidden');
+                    app.style.paddingTop = '0';
+                    app.innerHTML = Components.admin();
+                    window.scrollTo(0, 0);
+                    return;
+                }
+
+                app.style.paddingTop = '';
+                header.classList.remove('hidden');
+                footer.classList.remove('hidden');
+
+                document.querySelectorAll('.nav-links a').forEach(a => { a.classList.remove('active'); a.removeAttribute('aria-current'); });
+                const navLink = document.querySelector(`.nav-links a[data-page="${page}"]`);
+                if (navLink) { navLink.classList.add('active'); navLink.setAttribute('aria-current', 'page'); }
+
+                switch (page) {
+                    case 'home':
+                        app.innerHTML = Components.hero() + Components.about('h2') + Components.releasesStrip() + Components.ctaBand();
+                        break;
+                    case 'about':
+                        app.innerHTML = '<div style="padding-top:clamp(2rem,5vw,4rem)">' + Components.about('h1') + '</div>' + Components.ctaBand();
+                        break;
+                    case 'music':
+                        app.innerHTML = Components.music();
+                        break;
+                    case 'gallery':
+                        app.innerHTML = Components.gallery();
+                        break;
+                    case 'brands':
+                        app.innerHTML = Components.brands();
+                        break;
+                    case 'events':
+                        app.innerHTML = Components.events();
+                        break;
+                    case 'news':
+                        app.innerHTML = Components.news();
+                        break;
+                    case 'contact':
+                        app.innerHTML = Components.contact();
+                        break;
+                    default:
+                        app.innerHTML = Components.hero();
+                }
+                window.scrollTo(0, 0);
+                closeMenu();
+            }
+        };
+
+        // --- ADMIN ROUTER LOGIC ---
+        function adminNavigate(subPage) {
+            const content = document.getElementById('admin-panel-content');
+            document.querySelectorAll('.admin-nav a[data-admin]').forEach(a => a.classList.toggle('active', a.dataset.admin === subPage));
+
+            if (subPage === 'dashboard') {
+                content.innerHTML = Components.adminDashboard();
+            } else if (subPage === 'music') {
+                content.innerHTML = `
+                    <h1>Music Management</h1>
+                    <p class="demo-note">Demo controls — releases are not saved from this screen.</p>
+                    <div class="card">
+                        <h3>Add New Release</h3>
+                        <div class="admin-form">
+                            <div class="form-group"><label for="a-title">Title</label><input id="a-title" type="text"></div>
+                            <div class="form-group"><label for="a-art">Artwork URL</label><input id="a-art" type="text"></div>
+                            <div><button type="button" class="btn btn-primary" onclick="showToast('Release Added (Demo)')">Add Release</button></div>
+                        </div>
+                    </div>
+                    <div class="admin-thumbs">
+                        ${store.music.map(m => `
+                            <div class="card">
+                                <div class="ph-frame ratio-square">${imgTag(m.art, m.title + ' — cover art', 'cover')}</div>
+                                <div class="card-body">
+                                    <p>${esc(m.title)}</p>
+                                    <button type="button" class="btn btn-small" onclick="showToast('Edit (Demo)')">Edit</button>
+                                </div>
+                            </div>`).join('')}
+                    </div>
+                `;
+            } else if (subPage === 'gallery') {
+                adminGalleryList();
+            } else if (subPage === 'epk') {
+                adminEPK();
+            } else if (subPage === 'analytics') {
+                content.innerHTML = `
+                    <h1>Analytics</h1>
+                    <p class="demo-note">Demo figures — not connected to live analytics.</p>
+                    <div class="card">
+                        <h3>Website Traffic (Last 6 Months)</h3>
+                        <div class="bar-chart" role="img" aria-label="Bar chart of demo website traffic over six months">
+                            ${store.analytics.views.map((v, i) => `<div class="bar" style="height: ${v / 50}%;"><span>M${i + 1}</span></div>`).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // =====================================================================
+        // EPK (PRESS KIT) — a real, selectable-text A4 PDF built from the site's own data
+        //   generateEPK()  builds the document and opens the browser's "Save as PDF" (suggested name DJ-Tash-EPK.pdf)
+        //   EPK.file       if set, visitors download that pre-made PDF in one click instead
+        // =====================================================================
+        const EPK_AUDIENCE = ['Event organisers', 'Club and venue managers', 'Festival promoters', 'Corporate event planners', 'Private event clients', 'Music promoters', 'Brand partnership contacts'];
+        const EPK_TRACKING = ['si', 'drli', 'fbclid', 'igshid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+        const normPath = p => String(p || '').trim().toLowerCase();
+        const pad2 = n => String(n).padStart(2, '0');
+
+        // Removes tracking parameters (e.g. Spotify ?si=…) so links and QR codes stay short and clean.
+        function cleanUrl(u) {
+            try { const x = new URL(u); EPK_TRACKING.forEach(k => x.searchParams.delete(k)); return x.toString().replace(/\?$/, ''); }
+            catch (e) { return u; }
+        }
+        function shortUrl(u) {
+            try { const x = new URL(u); const s = x.host.replace(/^www\./, '') + x.pathname.replace(/\/$/, '') + x.search; return s.length > 44 ? s.slice(0, 41) + '…' : s; }
+            catch (e) { return u; }
+        }
+        function qrSVG(text, cls) {
+            try {
+                const q = qrcode(0, 'M'); q.addData(text, 'Byte'); q.make();
+                const n = q.getModuleCount(); let d = '';
+                for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) if (q.isDark(r, c)) d += `M${c} ${r}h1v1h-1z`;
+                return `<svg class="${cls || 'epk-qr'}" viewBox="-2 -2 ${n + 4} ${n + 4}" shape-rendering="crispEdges" role="img" aria-label="QR code for ${esc(text)}"><rect x="-2" y="-2" width="${n + 4}" height="${n + 4}" fill="#fff"/><path d="${d}" fill="#000"/></svg>`;
+            } catch (e) { return ''; }
+        }
+        const extLink = (url, inner, cls) => `<a ${cls ? `class="${cls}" ` : ''}href="${esc(url)}" target="_blank" rel="noopener noreferrer">${inner}</a>`;
+
+        function epkReleases() { return store.music.slice(0, 3); }
+        function epkPlatforms() { return store.platforms.filter(p => isRealLink(p.url)).map(p => ({ label: p.label, url: cleanUrl(p.url) })); }
+        function epkSocials() {
+            const have = new Set(store.platforms.map(p => p.label.toLowerCase()));
+            return store.socials.filter(s => isUrl(s.url) && !have.has(s.label.toLowerCase())).map(s => ({ label: s.label, url: cleanUrl(s.url) }));
+        }
+        // Extra promo photos: the EPK.photos list first, then real (non-sample) Gallery photos. Never repeats the cover or portrait photo.
+        function epkPhotoList() {
+            const taken = new Set([normPath(store.images.hero), normPath(store.images.portrait)]), out = [];
+            const add = p => { const k = normPath(p); if (k && !taken.has(k)) { taken.add(k); out.push(p); } };
+            EPK.photos.forEach(add);
+            store.gallery.filter(i => i.type === 'image' && i.published !== false && !i.isSample && i.src).forEach(i => add(i.src));
+            return out.slice(0, 3);
+        }
+
+        // Downscale big photos so the PDF stays email-sized (works on a web server; on file:// the originals are used).
+        function loadImg(src, cors) {
+            return new Promise((res, rej) => { const i = new Image(); if (cors) i.crossOrigin = 'anonymous'; i.onload = () => res(i); i.onerror = () => rej(new Error('load')); i.src = src; });
+        }
+        async function prepImage(src, maxPx) {
+            if (!src) return '';
+            if (location.protocol === 'file:' || /^data:/.test(src)) return src;
+            try {
+                const i = await loadImg(src, true);
+                const k = Math.min(1, maxPx / Math.max(i.naturalWidth, i.naturalHeight));
+                if (k >= 1) return src;
+                const c = document.createElement('canvas');
+                c.width = Math.round(i.naturalWidth * k); c.height = Math.round(i.naturalHeight * k);
+                c.getContext('2d').drawImage(i, 0, 0, c.width, c.height);
+                return c.toDataURL('image/jpeg', 0.86);
+            } catch (e) { return src; }
+        }
+
+        async function buildEPK(theme, keepPrep, short) {
+            const a = store.artist, c = store.contact, year = new Date().getFullYear();
+            const website = isUrl(EPK.website) ? EPK.website : '';
+            const releases = epkReleases(), platforms = epkPlatforms(), socials = epkSocials();
+            const photos = epkPhotoList();
+            const [heroSrc, portraitSrc] = await Promise.all([prepImage(store.images.hero, 2200), prepImage(store.images.portrait, 1400)]);
+            const coverSrcs = await Promise.all(releases.map(r => prepImage(r.art, 900)));
+            const photoSrcs = await Promise.all(photos.map(p => prepImage(p, 1500)));
+
+            const paras = bioParas(), plain = [], facts = {};
+            paras.forEach(p => { const m = p.match(/^(Sound|Purpose|Goal):\s*([\s\S]*)$/); m ? (facts[m[1]] = m[2]) : plain.push(p); });
+            const mail = `mailto:${c.email}?subject=${encodeURIComponent('Booking enquiry — ' + a.stageName)}&body=${encodeURIComponent('Event: \nDate: \nVenue / city: \nSet length: \nBudget range: \n')}`;
+            const tel = 'tel:' + c.phone.replace(/\s+/g, '');
+            const TOTAL = short ? 2 : 5;
+            const head = label => `<header class="epk-head"><span class="epk-logo">DJ TASH<i>.</i></span><span class="epk-mono">${esc(label)}</span></header>`;
+            const foot = n => `<footer class="epk-foot"><span>${esc(a.stageName)} &nbsp;•&nbsp; Electronic Press Kit &nbsp;•&nbsp; ${year}</span><span>${esc(c.email)}</span><span>${pad2(n)} / ${pad2(TOTAL)}</span></footer>`;
+            const sectionTitle = (t, extra) => `<div class="epk-section-title"><h3>${t}</h3>${extra || ''}</div>`;
+
+            // 1 — cover
+            const cover = `
+            <section class="epk-page epk-cover">
+                <div class="epk-photo">${imgTag(heroSrc, 'Portrait of ' + a.stageName, 'hero')}</div>
+                <div class="epk-fade"></div>
+                <div class="epk-top"><span class="epk-logo">DJ TASH<i>.</i></span><span class="epk-mono">Electronic Press Kit &nbsp;•&nbsp; ${year}</span></div>
+                <div class="epk-bottom">
+                    <p class="epk-mono" style="margin-bottom:4mm">Deep House DJ &amp; Electronic Music Artist</p>
+                    <h1><span class="dj">DJ</span> ${esc(a.stageName.replace(/^DJ\s+/i, ''))}</h1>
+                    <p class="epk-position">${esc(a.tagline)}</p>
+                    <p class="epk-mono" style="color:#B3A898">${esc(a.genre)} &nbsp;•&nbsp; ${esc(a.city)}, ${esc(a.country)}</p>
+                    <div class="epk-cta">
+                        <div><strong>Book DJ Tash</strong><span>${esc(c.manager)} &nbsp;•&nbsp; <a href="${esc(tel)}">${esc(c.phone)}</a> &nbsp;•&nbsp; <a href="${esc(mail)}">${esc(c.email)}</a>${website ? ` &nbsp;•&nbsp; ${extLink(website, esc(shortUrl(website)))}` : ''}</span></div>
+                        <a class="epk-btn" href="${esc(mail)}">Enquire about availability</a>
+                    </div>
+                </div>
+            </section>`;
+
+            // 2 — about
+            const about = `
+            <section class="epk-page">
+                ${head('About the artist')}
+                <div class="epk-about">
+                    <div>
+                        <div class="epk-tile is-port">${imgTag(portraitSrc, 'Portrait of ' + a.stageName, 'portrait')}</div>
+                        <p class="epk-mono" style="margin-top:3mm;color:var(--e-sub)">${esc(a.city)}, ${esc(a.country)}</p>
+                    </div>
+                    <div>
+                        <p class="epk-mono epk-kicker">About</p>
+                        <h2 class="epk-h2">The story behind the sound.</h2>
+                        <p class="epk-mono" style="margin-bottom:4mm;color:var(--e-sub)">${esc(a.name)}</p>
+                        <p class="epk-lede">${esc(a.bioShort)}</p>
+                        ${plain.map(p => `<p class="epk-p">${esc(p)}</p>`).join('')}
+                        ${(facts.Purpose || facts.Goal) ? `<div class="epk-facts">${facts.Purpose ? `<div class="epk-fact"><span class="epk-mono">Purpose</span><p>${esc(facts.Purpose)}</p></div>` : ''}${facts.Goal ? `<div class="epk-fact"><span class="epk-mono">Goal</span><p>${esc(facts.Goal)}</p></div>` : ''}</div>` : ''}
+                    </div>
+                </div>
+                <div class="epk-identity">
+                    <p class="epk-mono">Musical identity</p>
+                    ${facts.Sound ? `<p class="epk-quote">${esc(facts.Sound)}</p>` : ''}
+                    <div class="epk-chips">${a.genre.split(/\s*•\s*/).filter(Boolean).map(g => `<span class="epk-chip">${esc(g)}</span>`).join('')}</div>
+                </div>
+                ${foot(2)}
+            </section>`;
+
+            // 3 — music & media
+            const primary = platforms[0];
+            const music = `
+            <section class="epk-page">
+                ${head('Music and media')}
+                <p class="epk-mono epk-kicker">Listen</p>
+                <h2 class="epk-h2">Selected releases.</h2>
+                <div class="epk-releases">
+                    ${releases.map((r, i) => `
+                    <article class="epk-rel">
+                        <div class="epk-tile is-sq">${imgTag(coverSrcs[i], r.title + ' — cover art', 'cover')}</div>
+                        <p class="epk-mono">${esc(r.genre)}</p>
+                        <h3>${esc(r.title)}</h3>
+                        <p>${esc(r.date)}</p>
+                        ${isRealLink(r.link) ? `<div class="epk-qrrow">${qrSVG(cleanUrl(r.link))}<p>Scan, or click to listen.<br>${extLink(cleanUrl(r.link), `<span class="epk-link">${esc(shortUrl(cleanUrl(r.link)))}</span>`)}</p></div>` : ''}
+                    </article>`).join('')}
+                </div>
+                <div class="epk-section">
+                    ${sectionTitle('Stream DJ Tash')}
+                    <div class="epk-streams">
+                        <div>
+                            ${platforms.map(p => extLink(p.url, `<strong>${esc(p.label)}</strong><span class="epk-link">${esc(shortUrl(p.url))}</span>`, 'epk-stream')).join('')}
+                            ${isRealLink(store.youtube) ? extLink(cleanUrl(store.youtube), `<strong>YouTube — live performances</strong><span class="epk-link">${esc(shortUrl(cleanUrl(store.youtube)))}</span>`, 'epk-stream') : ''}
+                        </div>
+                        ${primary ? `<div>${qrSVG(primary.url, 'epk-qrbig')}<p class="epk-qrcap">Scan to open DJ Tash on ${esc(primary.label)}.</p></div>` : ''}
+                    </div>
+                </div>
+                ${foot(3)}
+            </section>`;
+
+            // 4 — offer, highlights, photography
+            const rider = EPK.rider.split('\n').map(x => x.trim()).filter(Boolean);
+            const offer = `
+            <section class="epk-page">
+                ${head('Performance and career')}
+                <p class="epk-mono epk-kicker">Perform</p>
+                <h2 class="epk-h2">What DJ Tash brings.</h2>
+                <div class="epk-offers">${store.offerings.map(o => `<div class="epk-offer"><h3>${esc(o.title)}</h3><p>${esc(o.text)}</p></div>`).join('')}</div>
+                <p class="epk-p" style="margin-top:4mm">To receive a quote, share the event details, set length and budget range with management.</p>
+                ${rider.length ? `<div class="epk-section epk-rider">${sectionTitle('Technical requirements')}<ul>${rider.map(r => `<li>${esc(r)}</li>`).join('')}</ul></div>` : ''}
+                <div class="epk-section">
+                    ${sectionTitle('Career highlights')}
+                    ${store.timeline.map(t => `<div class="epk-tl"><span class="epk-mono">${esc(t.label)}</span><div><h3>${esc(t.title)}</h3><p>${esc(t.text)}</p></div></div>`).join('')}
+                </div>
+                ${photos.length ? `<div class="epk-section">${sectionTitle('Photography')}<div class="epk-photos">${photos.map((p, i) => `<div class="epk-tile is-wide">${imgTag(photoSrcs[i], a.stageName + ' — promo photo ' + (i + 1), 'gallery')}</div>`).join('')}</div></div>` : ''}
+                ${foot(4)}
+            </section>`;
+
+            // 5 — booking
+            const book = `
+            <section class="epk-page epk-book">
+                ${head('Booking and contact')}
+                <p class="epk-mono epk-kicker">Bookings</p>
+                <h2 class="epk-book-h">Book<br>DJ Tash.</h2>
+                <p class="epk-lede" style="max-width:130mm">Available for club nights, festivals, fashion and corporate events, and private functions.</p>
+                <div class="epk-book-grid">
+                    <div>
+                        <p class="epk-mono">Enquiries welcome from</p>
+                        <ul class="epk-who">${EPK_AUDIENCE.map(w => `<li>${esc(w)}</li>`).join('')}</ul>
+                    </div>
+                    <div>
+                        <div class="epk-contact">
+                            <p class="epk-mono">Management</p>
+                            <h3>${esc(c.manager)}</h3>
+                            <a class="row" href="${esc(tel)}"><small>Telephone</small>${esc(c.phone)}</a>
+                            <a class="row" href="${esc(mail)}"><small>Email</small>${esc(c.email)}</a>
+                            ${website ? extLink(website, `<small>Website</small>${esc(shortUrl(website))}`, 'row') : ''}
+                            <p style="margin:5mm 0 3mm;font-size:9pt">Share event details, set length and budget range and management will respond.</p>
+                            <a class="epk-btn" href="${esc(mail)}">Enquire about availability</a>
+                        </div>
+                        ${website ? `<div class="epk-qrrow" style="margin-top:5mm">${qrSVG(website)}<p>Scan to visit the official website.</p></div>` : ''}
+                    </div>
+                </div>
+                <div class="epk-section">
+                    ${sectionTitle('Online')}
+                    <div class="epk-streams" style="grid-template-columns:1fr 1fr;gap:0 8mm">
+                        ${platforms.concat(socials).map(p => extLink(p.url, `<strong>${esc(p.label)}</strong><span class="epk-link">${esc(shortUrl(p.url))}</span>`, 'epk-stream')).join('')}
+                    </div>
+                </div>
+                ${wave('epk-wave')}
+                ${foot(5)}
+            </section>`;
+
+
+            // two-page summary
+            const sTop = releases.slice(0, 3);
+            const sHigh = store.timeline.slice(0, 5);
+            const short1 = `
+            <section class="epk-page epk-s1">
+                <div class="epk-s-hero">${imgTag(heroSrc, 'Portrait of ' + a.stageName, 'hero')}<div class="epk-s-fade"></div>
+                    <div class="epk-top"><span class="epk-logo">DJ TASH<i>.</i></span><span class="epk-mono">Electronic Press Kit &nbsp;•&nbsp; ${year}</span></div>
+                    <div class="epk-s-name"><h1><span class="dj">DJ</span> ${esc(a.stageName.replace(/^DJ\s+/i, ''))}</h1><p class="epk-mono">${esc(a.genre)} &nbsp;•&nbsp; ${esc(a.city)}, ${esc(a.country)}</p></div>
+                </div>
+                <div class="epk-s-body">
+                    <p class="epk-lede">${esc(a.bioShort)}</p>
+                    ${facts.Sound ? `<div class="epk-identity" style="margin-top:0"><p class="epk-mono">Musical identity</p><p class="epk-quote" style="margin-bottom:0">${esc(facts.Sound)}</p></div>` : ''}
+                    <div class="epk-section">${sectionTitle('Selected releases')}
+                        <div class="epk-releases">${sTop.map(r => `<article class="epk-rel"><div class="epk-s-rel">${isRealLink(r.link) ? qrSVG(cleanUrl(r.link)) : ''}<div><p class="epk-mono">${esc(r.genre)}</p><h3>${esc(r.title)}</h3><p>${esc(r.date)}</p></div></div></article>`).join('')}</div>
+                    </div>
+                    <div class="epk-section">${sectionTitle('Listen and follow')}
+                        <div class="epk-streams" style="grid-template-columns:1fr 1fr;gap:0 8mm">${platforms.concat(socials).map(p => extLink(p.url, `<strong>${esc(p.label)}</strong><span class="epk-link">${esc(shortUrl(p.url))}</span>`, 'epk-stream')).join('')}</div>
+                    </div>
+                </div>
+                ${foot(1)}
+            </section>`;
+            const short2 = `
+            <section class="epk-page epk-book epk-s2">
+                ${head('Performance and booking')}
+                <h2 class="epk-h2">What DJ Tash brings.</h2>
+                <div class="epk-offers">${store.offerings.map(o => `<div class="epk-offer"><h3>${esc(o.title)}</h3><p>${esc(o.text)}</p></div>`).join('')}</div>
+                <div class="epk-section">${sectionTitle('Career highlights')}
+                    ${sHigh.map(t => `<div class="epk-tl"><span class="epk-mono">${esc(t.label)}</span><div><h3>${esc(t.title)}</h3><p>${esc(t.text)}</p></div></div>`).join('')}
+                </div>
+                <div class="epk-book-grid">
+                    <div class="epk-contact">
+                        <p class="epk-mono">Book DJ Tash</p>
+                        <h3>${esc(c.manager)}</h3>
+                        <a class="row" href="${esc(tel)}"><small>Telephone</small>${esc(c.phone)}</a>
+                        <a class="row" href="${esc(mail)}"><small>Email</small>${esc(c.email)}</a>
+                        ${website ? extLink(website, `<small>Website</small>${esc(shortUrl(website))}`, 'row') : ''}
+                        <p style="margin:4mm 0 3mm;font-size:9pt">Open to club nights, fashion and corporate events, and private functions. Share event details, set length and budget range.</p>
+                        <a class="epk-btn" href="${esc(mail)}">Enquire about availability</a>
+                    </div>
+                    <div>
+                        <p class="epk-mono">Enquiries welcome from</p>
+                        <ul class="epk-who">${EPK_AUDIENCE.map(w => `<li>${esc(w)}</li>`).join('')}</ul>
+                    </div>
+                </div>
+                ${foot(2)}
+            </section>`;
+
+            let root = document.getElementById('epk-root');
+            if (!root) { root = document.createElement('div'); root.id = 'epk-root'; document.body.appendChild(root); }
+            root.className = 'epk-root epk-' + (theme === 'light' ? 'light' : 'dark') + ' epk-prep';
+            root.innerHTML = short ? short1 + short2 : cover + about + music + offer + book;
+
+            // wait for every image and font, so the PDF never captures half-loaded content
+            const imgs = [...root.querySelectorAll('img')];
+            await Promise.all(imgs.map(i => i.complete ? null : new Promise(r => { i.addEventListener('load', r, { once: true }); i.addEventListener('error', r, { once: true }); })));
+            await Promise.all(imgs.map(i => i.decode ? i.decode().catch(() => {}) : null));
+            try {
+                await Promise.race([
+                    Promise.all(['900 40px Archivo', '800 20px Archivo', '700 20px Archivo', '500 20px Archivo', '400 12px Inter', '500 12px Inter', '600 12px Inter', '400 10px "IBM Plex Mono"', '500 10px "IBM Plex Mono"'].map(f => document.fonts.load(f))).then(() => document.fonts.ready),
+                    new Promise(r => setTimeout(r, 4000))
+                ]);
+            } catch (e) {}
+            if (!keepPrep) root.classList.remove('epk-prep');
+            return root;
+        }
+
+        function downloadEPKFile() {
+            const a = document.createElement('a');
+            a.href = EPK.file; a.download = 'DJ-Tash-EPK.pdf'; a.rel = 'noopener';
+            document.body.appendChild(a); a.click(); a.remove();
+            showToast('Downloading DJ-Tash-EPK.pdf');
+        }
+        let epkBusy = false;
+        async function generateEPK(theme, force, short) {
+            if (EPK.file && !force) { downloadEPKFile(); return; }
+            if (epkBusy) return;
+            epkBusy = true;
+            showToast('Preparing the press kit…');
+            const root = await buildEPK(theme, true, short);
+            const prevTitle = document.title, html = document.documentElement;
+            html.classList.add('epk-printing');
+            document.title = 'DJ-Tash-EPK';
+            let done = false;
+            const restore = () => {
+                if (done) return; done = true;
+                document.title = prevTitle; html.classList.remove('epk-printing'); root.remove(); epkBusy = false;
+                window.removeEventListener('afterprint', restore);
+            };
+            window.addEventListener('afterprint', restore);
+            showToast('Choose “Save as PDF” in the print window.');
+            try { window.print(); } catch (e) { restore(); return; }
+            setTimeout(restore, 30000);   // fallback for browsers that don't fire afterprint
+        }
+        async function previewEPK(theme, short) {
+            showToast('Building the preview…');
+            const root = await buildEPK(theme, false, short);
+            const z = Math.min(1, (window.innerWidth - 32) / 794);
+            Overlay.open(`<div class="epk-pvwrap" data-keep>
+                <button type="button" class="lb-btn lb-close" data-autofocus aria-label="Close preview" onclick="Overlay.close()">${SVG.close}</button>
+                <div class="epk-root epk-${theme === 'light' ? 'light' : 'dark'} epk-preview" style="--pz:${z}">${root.innerHTML}</div></div>`, { label: 'Press kit preview', className: 'ov-scroll' });
+        }
+
+        // ---- admin: EPK page (generate, preview, what is still missing)
+        function probeImage(src) {
+            return new Promise(res => { if (!src) return res(false); const i = new Image(); i.onload = () => res(true); i.onerror = () => res(false); i.src = src; });
+        }
+        function epkAssets() {
+            const list = [{ label: 'Cover photo (website hero)', path: store.images.hero }, { label: 'About portrait', path: store.images.portrait }];
+            epkPhotoList().forEach((p, i) => list.push({ label: 'Promo photo ' + (i + 1), path: p }));
+            epkReleases().forEach(r => list.push({ label: 'Cover art — ' + r.title, path: r.art }));
+            return list;
+        }
+        function epkNeeds() {
+            const need = [], info = [];
+            if (!isUrl(EPK.website)) need.push(['Official website address', 'Set EPK.website. It is printed on the cover and booking page with a QR code. Until then it is left out.']);
+            if (!EPK.rider.trim()) need.push(['Technical rider', 'Set EPK.rider (one requirement per line). The section is left out of the PDF until you add it.']);
+            epkReleases().forEach(r => { if (!isRealLink(r.link)) need.push(['Listening link for “' + r.title + '”', 'No QR code or link is printed for this release until it has a link.']); });
+            if (epkPhotoList().length < 3) need.push(['More promo photos', 'Page 4 has room for 3. Add paths to EPK.photos or add real photos in Admin → Gallery.']);
+            if (!store.socials.some(s => s.label === 'TikTok' && isUrl(s.url))) info.push('TikTok profile link (optional): not set, so it is not printed.');
+            info.push('WhatsApp number (optional): none is on the website, so none is printed.');
+            info.push('Short descriptions for each release (optional): none exist yet, so none are printed.');
+            info.push('Left out on purpose: the sample “Previous Partnerships” (Mzansi Brew, Vodacom), the sample events and the sample gallery entries.');
+            info.push('Everything in “Career highlights” is printed exactly as it appears on the About page. Please confirm each line is accurate before sending the PDF to promoters.');
+            return { need, info };
+        }
+        async function adminEPK() {
+            const { need, info } = epkNeeds(), assets = epkAssets();
+            adminSet(`
+                <div class="a-head"><h1>EPK / Press Kit</h1>
+                    <div class="btn-row">
+                        <button type="button" class="btn btn-primary btn-small" onclick="generateEPK('dark', true)">Generate PDF — dark</button>
+                        <button type="button" class="btn btn-small" onclick="generateEPK('light', true)">Generate PDF — light (print-friendly)</button>
+                        <button type="button" class="btn btn-small" onclick="previewEPK('dark')">Preview</button>
+                        <button type="button" class="btn btn-small" onclick="generateEPK('light', true, true)">Generate 2-page summary (light)</button>
+                        <button type="button" class="btn btn-small" onclick="generateEPK('dark', true, true)">Generate 2-page summary (dark)</button>
+                    </div>
+                </div>
+                <p class="demo-note">The press kit is built from the data on this website (biography, releases, links, timeline, contact), so it is always up to date. In the print window choose <strong>Save as PDF</strong> (suggested name: DJ-Tash-EPK.pdf). For a one-click download for visitors, save that PDF next to <code>tash.html</code> and set <code>EPK.file = "DJ-Tash-EPK.pdf"</code>.</p>
+                <div class="card"><h3>Needs your input</h3>
+                    <ul class="a-list">${need.length ? need.map(n => `<li><span class="no">✗</span><span><strong>${esc(n[0])}</strong><small>${esc(n[1])}</small></span></li>`).join('') : '<li><span class="ok">✓</span><span>Nothing essential is missing.</span></li>'}</ul></div>
+                <div class="card"><h3>Image check</h3><ul class="a-list" id="epk-imgs">${assets.map(x => `<li><span class="info">…</span><span>${esc(x.label)}<small>${esc(x.path || 'no file set')}</small></span></li>`).join('')}</ul></div>
+                <div class="card"><h3>Good to know</h3><ul class="a-list">${info.map(t => `<li><span class="info">•</span><span>${esc(t)}</span></li>`).join('')}</ul></div>`);
+            const res = await Promise.all(assets.map(x => probeImage(x.path)));
+            const ul = document.getElementById('epk-imgs');
+            if (ul) ul.innerHTML = assets.map((x, i) => `<li><span class="${res[i] ? 'ok' : 'no'}">${res[i] ? '✓' : '✗'}</span><span>${esc(x.label)}<small>${esc(x.path || 'no file set')}${res[i] ? '' : ' — file not found, a placeholder is printed instead'}</small></span></li>`).join('');
+        }
+
+        // --- UTILITIES ---
+        function closeMenu() {
+            const nav = document.getElementById('nav-links'), btn = document.getElementById('menu-btn');
+            nav.classList.remove('active');
+            btn.setAttribute('aria-expanded', 'false');
+            btn.setAttribute('aria-label', 'Open menu');
+            btn.innerHTML = '<i class="ri-menu-line" aria-hidden="true"></i>';
+        }
+        function toggleMenu() {
+            const nav = document.getElementById('nav-links'), btn = document.getElementById('menu-btn');
+            const open = nav.classList.toggle('active');
+            btn.setAttribute('aria-expanded', String(open));
+            btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            btn.innerHTML = `<i class="${open ? 'ri-close-line' : 'ri-menu-line'}" aria-hidden="true"></i>`;
+        }
+
+        function toggleAdminView() {
+            // Simple mock auth
+            router.navigate('admin');
+            showToast("Logged in as Administrator");
+        }
+
+        // Hands the enquiry to the visitor's email app, addressed to management.
+        function openMail(url) { window.location.href = url; }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const f = e.target;
+            const btn = f.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            const v = n => f.elements[n].value.trim();
+            const subject = `${v('type')} — ${v('name')}`;
+            const body = `Name / Organisation: ${v('name')}\nEmail: ${v('email')}\nEnquiry type: ${v('type')}\n\n${v('message')}`;
+            btn.innerText = "Opening email...";
+            openMail(`mailto:${store.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+            showToast("Opening your email app — press send to deliver your enquiry.");
+            setTimeout(() => { btn.innerText = originalText; }, 1800);
+        }
+
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            const icon = document.createElement('i');
+            icon.className = 'ri-information-line';
+            icon.setAttribute('aria-hidden', 'true');
+            const span = document.createElement('span');
+            span.textContent = message;
+            toast.appendChild(icon);
+            toast.appendChild(span);
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(12px)';
+                setTimeout(() => toast.remove(), 300);
+            }, 3200);
+        }
+
+        function renderFooterSocials() {
+            document.getElementById('footer-socials').innerHTML = store.socials
+                .filter(s => isUrl(s.url))
+                .map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(s.label)}"><i class="${esc(s.icon)}" aria-hidden="true"></i></a>`)
+                .join('');
+        }
+
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+        // =====================================================================
+        // OVERLAY MANAGER — one dialog at a time: focus trap, Esc, scroll lock, focus restore
+        // =====================================================================
+        const Overlay = {
+            el: null, opener: null, onKey: null, onClose: null,
+            open(html, opts) {
+                opts = opts || {};
+                const opener = this.el ? this.opener : document.activeElement;
+                this.close(true);
+                this.opener = opener;
+                const el = document.createElement('div');
+                el.className = 'overlay ' + (opts.className || '');
+                el.setAttribute('role', 'dialog');
+                el.setAttribute('aria-modal', 'true');
+                el.setAttribute('aria-label', opts.label || 'Dialog');
+                el.innerHTML = html;
+                el.addEventListener('click', e => { if (!e.target.closest('[data-keep]')) Overlay.close(); });
+                document.body.appendChild(el);
+                this.el = el; this.onKey = opts.onKey || null; this.onClose = opts.onClose || null;
+                document.documentElement.classList.add('no-scroll');
+                document.addEventListener('keydown', Overlay._key);
+                const first = el.querySelector('[data-autofocus]') || el.querySelector('button, [href], input, select, textarea');
+                if (first) first.focus();
+            },
+            _key(e) {
+                const o = Overlay;
+                if (!o.el) return;
+                if (e.key === 'Escape') { e.preventDefault(); o.close(); return; }
+                if (e.key === 'Tab') {
+                    const f = [...o.el.querySelectorAll('button:not([disabled]), [href], input:not([disabled]), select, textarea, video[controls], [tabindex]:not([tabindex="-1"])')].filter(n => n.getClientRects().length);
+                    if (!f.length) return;
+                    const a = f[0], z = f[f.length - 1];
+                    if (e.shiftKey && (document.activeElement === a || !o.el.contains(document.activeElement))) { e.preventDefault(); z.focus(); }
+                    else if (!e.shiftKey && (document.activeElement === z || !o.el.contains(document.activeElement))) { e.preventDefault(); a.focus(); }
+                } else if (o.onKey) { o.onKey(e); }
+            },
+            close(silent) {
+                if (!this.el) return;
+                stopMedia();
+                if (this.onClose) this.onClose();
+                this.el.remove();
+                this.el = null;
+                document.removeEventListener('keydown', Overlay._key);
+                document.documentElement.classList.remove('no-scroll');
+                if (!silent && this.opener && document.contains(this.opener)) this.opener.focus();
+                this.opener = null;
+            }
+        };
+
+        // Stops and unloads every gallery video / embed (called on close, on step, on navigation).
+        function stopMedia() {
+            document.querySelectorAll('video').forEach(v => { try { v.pause(); } catch (e) {} v.removeAttribute('src'); try { v.load(); } catch (e) {} });
+            document.querySelectorAll('.overlay iframe').forEach(f => { f.src = 'about:blank'; });
+        }
+
+        let confirmCb = null;
+        function confirmDialog(o) {
+            confirmCb = o.onConfirm;
+            Overlay.open(`<div class="dlg" data-keep><h2>${esc(o.title)}</h2><p>${esc(o.message)}</p>
+                <div class="btn-row">
+                    <button type="button" class="btn ${o.danger ? 'btn-danger' : 'btn-primary'}" onclick="confirmYes()">${esc(o.confirmLabel || 'Confirm')}</button>
+                    <button type="button" class="btn" data-autofocus onclick="Overlay.close()">Cancel</button>
+                </div></div>`, { label: o.title, className: 'ov-dialog' });
+        }
+        function confirmYes() { const cb = confirmCb; confirmCb = null; Overlay.close(); if (cb) cb(); }
+
+        // =====================================================================
+        // GALLERY — public page
+        // =====================================================================
+        const SVG = {
+            close: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 5l14 14M19 5L5 19"/></svg>',
+            prev: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg>',
+            next: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7"/></svg>',
+            play: '<svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 5.5v13l11-6.5z"/></svg>',
+            zoom: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6"/><path d="M16 16l4 4M11 8.5v5M8.5 11h5"/></svg>'
+        };
+        const galleryState = { filter: 'all' };
+        const visibleGallery = () => store.gallery.filter(i => i.published !== false);
+        const galleryById = id => store.gallery.find(i => i.id === id);
+
+        function galleryFilters() {
+            return [{ key: 'all', label: 'All Media' }, { key: 'photos', label: 'Photos' }, { key: 'videos', label: 'Videos' }]
+                .concat(GALLERY_CATEGORIES.map(c => ({ key: c, label: c })));
+        }
+        function galleryMatches(it, f) {
+            if (f === 'all') return true;
+            if (f === 'photos') return it.type === 'image';
+            if (f === 'videos') return it.type === 'video';
+            return it.category === f;
+        }
+        function formatGalleryDate(iso) {
+            if (!iso) return '';
+            const d = new Date(iso + 'T00:00:00');
+            return isNaN(d) ? iso : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+        }
+
+        // Video sources: local files (.mp4/.webm/...), YouTube and Vimeo links are supported.
+        const VIDEO_EXT = /\.(mp4|webm|ogv|ogg|mov|m4v)(\?.*)?$/i;
+        function ytInfo(id) { return { kind: 'youtube', id, embed: 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0&playsinline=1', thumb: 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg' }; }
+        function parseVideoSource(src) {
+            src = (src || '').trim();
+            if (!src) return { kind: 'none' };
+            const absolute = /^[a-z][a-z0-9+.-]*:/i.test(src);
+            if (absolute && !/^https?:\/\//i.test(src)) return { kind: 'invalid' };
+            if (!absolute) return VIDEO_EXT.test(src) ? { kind: 'file', url: src } : { kind: 'unsupported' };
+            let u; try { u = new URL(src); } catch (e) { return { kind: 'invalid' }; }
+            const h = u.hostname.replace(/^(www|m)\./, '');
+            const okId = id => /^[\w-]{11}$/.test(id || '');
+            if (h === 'youtu.be') { const id = u.pathname.split('/')[1]; if (okId(id)) return ytInfo(id); }
+            if (h === 'youtube.com' || h === 'youtube-nocookie.com') {
+                let id = u.searchParams.get('v');
+                if (!id) { const m = u.pathname.match(/^\/(?:embed|shorts|live)\/([\w-]{11})/); id = m && m[1]; }
+                if (okId(id)) return ytInfo(id);
+            }
+            if (h === 'vimeo.com' || h === 'player.vimeo.com') {
+                const m = u.pathname.match(/(?:^|\/)(\d{5,})(?:\/|$)/);
+                if (m) return { kind: 'vimeo', id: m[1], embed: 'https://player.vimeo.com/video/' + m[1] };
+            }
+            return VIDEO_EXT.test(u.pathname) ? { kind: 'file', url: src } : { kind: 'external', url: src };
+        }
+        const posterFor = it => it.poster || (it.type === 'video' ? (parseVideoSource(it.src).thumb || '') : '');
+
+        function galleryTile(it) {
+            const vid = it.type === 'video';
+            const meta = [it.category, formatGalleryDate(it.date)].filter(Boolean).map(esc).join(' &nbsp;•&nbsp; ');
+            return `
+            <figure class="g-item">
+                <div class="ph-frame g-box ${vid ? 'ratio-video' : 'ratio-photo'}">
+                    ${imgTag(vid ? posterFor(it) : it.src, vid ? '' : (it.alt || it.title), vid ? 'video' : 'gallery', 'loading="lazy" decoding="async"')}
+                    <button type="button" class="g-thumb ${vid ? 'is-video' : ''}" data-id="${esc(it.id)}" onclick="openMedia(this.dataset.id)" aria-label="${vid ? 'Play video' : 'View larger'}: ${esc(it.title)}">
+                        ${vid ? `<span class="g-play">${SVG.play}</span>` : `<span class="g-zoom">${SVG.zoom}</span>`}
+                    </button>
+                </div>
+                <figcaption class="g-cap">
+                    ${meta ? `<p class="label">${meta}</p>` : ''}
+                    <h3>${esc(it.title)}</h3>
+                    ${it.description ? `<p class="d">${esc(it.description)}</p>` : ''}
+                    ${it.isSample ? '<span class="tag sample">Sample</span>' : ''}
+                </figcaption>
+            </figure>`;
+        }
+
+        function galleryHTML() {
+            const vis = visibleGallery(), f = galleryState.filter;
+            const shown = vis.filter(i => galleryMatches(i, f));
+            const photos = shown.filter(i => i.type === 'image'), videos = shown.filter(i => i.type === 'video');
+            const chips = galleryFilters().map(d => `<button type="button" class="chip" data-filter="${esc(d.key)}" aria-pressed="${d.key === f}" onclick="galleryFilter(this.dataset.filter)">${esc(d.label)} <span class="count">${vis.filter(i => galleryMatches(i, d.key)).length}</span></button>`).join('');
+            const label = (galleryFilters().find(d => d.key === f) || {}).label || f;
+            const section = (title, list) => list.length ? `
+                <section class="g-section" aria-labelledby="g-${title.toLowerCase()}">
+                    <div class="g-head"><h2 id="g-${title.toLowerCase()}">${title}</h2><span class="label muted">${list.length} ${list.length === 1 ? 'item' : 'items'}</span></div>
+                    <div class="g-grid">${list.map(galleryTile).join('')}</div>
+                </section>` : '';
+            const body = shown.length ? section('Photos', photos) + section('Videos', videos) : `
+                <div class="empty">
+                    <h2>${vis.length ? 'Nothing here yet' : 'No media yet'}</h2>
+                    <p>${vis.length ? `There is no media in “${esc(label)}” at the moment.` : 'Photos and videos will appear here soon.'}</p>
+                    ${vis.length && f !== 'all' ? '<button type="button" class="btn" onclick="galleryFilter(\'all\')">Show all media</button>' : ''}
+                </div>`;
+            return `
+                <div class="g-filters" role="group" aria-label="Filter gallery">${chips}</div>
+                <!--${vis.some(i => i.isSample) ? '<p class="notice"><strong>Sample entries.</strong> Items tagged “Sample” are placeholders. No real photos or recordings have been added in their place yet.</p>' : ''}-->
+                <p class="sr-only" role="status">Showing ${shown.length} ${shown.length === 1 ? 'item' : 'items'}: ${esc(label)}</p>
+                ${body}`;
+        }
+        function galleryFilter(key) {
+            galleryState.filter = key;
+            const root = document.getElementById('gallery-root');
+            if (root) root.innerHTML = galleryHTML();
+            const active = root && root.querySelector('.chip[aria-pressed="true"]');
+            if (active) active.focus({ preventScroll: true });
+        }
+
+        // ---- viewer (photo lightbox + video player)
+        const Lightbox = { items: [], i: 0 };
+        function openMedia(id) {
+            const it = galleryById(id);
+            if (!it) return;
+            let list = visibleGallery().filter(x => x.type === it.type && galleryMatches(x, galleryState.filter));
+            if (!list.some(x => x.id === id)) list = [it];
+            openLightbox(list, list.findIndex(x => x.id === id));
+        }
+        function openLightbox(items, index) {
+            Lightbox.items = items; Lightbox.i = index;
+            Overlay.open(`
+                <div class="lb" id="lb">
+                    <button type="button" class="lb-btn lb-close" data-keep data-autofocus aria-label="Close viewer" onclick="Overlay.close()">${SVG.close}</button>
+                    <button type="button" class="lb-btn lb-nav lb-prev" data-keep aria-label="Previous" onclick="lightboxStep(-1)">${SVG.prev}</button>
+                    <div class="lb-main" id="lb-main" data-keep></div>
+                    <button type="button" class="lb-btn lb-nav lb-next" data-keep aria-label="Next" onclick="lightboxStep(1)">${SVG.next}</button>
+                </div>`, {
+                label: items[index].title,
+                onKey: e => { if (e.key === 'ArrowLeft') lightboxStep(-1); else if (e.key === 'ArrowRight') lightboxStep(1); }
+            });
+            let x0 = null;
+            Overlay.el.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+            Overlay.el.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(dx) > 60) lightboxStep(dx < 0 ? 1 : -1); }, { passive: true });
+            fillLightbox();
+        }
+        function lightboxStep(d) {
+            const n = Lightbox.items.length;
+            if (n < 2) return;
+            Lightbox.i = (Lightbox.i + d + n) % n;
+            fillLightbox();
+        }
+        function lightboxNote(msg) {
+            const n = document.getElementById('lb-note');
+            if (n) { n.innerHTML = msg; n.hidden = false; }
+        }
+        function fillLightbox() {
+            const L = Lightbox, it = L.items[L.i], n = L.items.length;
+            stopMedia();
+            const main = document.getElementById('lb-main');
+            let media = '', note = '';
+            if (it.type === 'image') {
+                media = `<div class="lb-media"><img id="lb-img" src="${it.src ? esc(it.src) : placeholder('gallery')}" alt="${esc(it.alt || it.title)}" ${it.src ? '' : 'data-ph="1" class="is-placeholder"'} onerror="phFallback(this,'gallery'); lightboxNote('This photo could not be loaded. Check the file path in Admin → Gallery.')"></div>`;
+                if (!it.src) note = it.isSample ? 'Sample placeholder. No photo has been added yet.' : 'No photo has been added to this item yet.';
+            } else {
+                const v = parseVideoSource(it.src), poster = posterFor(it);
+                const posterImg = `<img src="${poster ? esc(poster) : placeholder('video')}" alt="" ${poster ? '' : 'data-ph="1" class="is-placeholder"'} onerror="phFallback(this,'video')">`;
+                if (v.kind === 'file') {
+                    media = `<div class="lb-media is-video"><video id="lb-video" controls playsinline preload="metadata" ${poster ? `poster="${esc(poster)}"` : ''} src="${esc(v.url)}" aria-label="${esc(it.title)}">Your browser can’t play this video.</video></div>`;
+                } else if (v.kind === 'youtube' || v.kind === 'vimeo') {
+                    media = `<div class="lb-media is-video"><iframe id="lb-frame" src="${esc(v.embed)}" title="${esc(it.title)}" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`;
+                } else {
+                    media = `<div class="lb-media is-video">${posterImg}</div>`;
+                    if (v.kind === 'none') note = it.isSample ? 'Sample video placeholder. No video has been added yet.' : 'No video has been added to this item yet.';
+                    else if (v.kind === 'external') note = `This video can’t be played here. <a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">Open it in a new tab</a>.`;
+                    else note = 'This video source isn’t supported. Use an .mp4 or .webm file, or a YouTube or Vimeo link.';
+                }
+            }
+            const meta = [it.category, formatGalleryDate(it.date)].filter(Boolean).map(esc).join(' &nbsp;•&nbsp; ');
+            main.innerHTML = `${media}
+                <div class="lb-cap">
+                    <p class="label">${meta}${it.isSample ? ' &nbsp; <span class="tag sample">Sample</span>' : ''}</p>
+                    <h2>${esc(it.title)}</h2>
+                    ${it.description ? `<p>${esc(it.description)}</p>` : ''}
+                    <p class="note" id="lb-note" role="status" ${note ? '' : 'hidden'}>${note}</p>
+                    ${n > 1 ? `<p class="label muted">${L.i + 1} / ${n}</p>` : ''}
+                </div>`;
+            Overlay.el.setAttribute('aria-label', it.title);
+            document.querySelectorAll('.lb-nav').forEach(b => { b.style.display = n > 1 ? '' : 'none'; });
+            const vid = document.getElementById('lb-video');
+            if (vid) vid.addEventListener('error', () => lightboxNote('This video could not be loaded. Check the file path and that it is an MP4 or WebM file.'));
+        }
+
+        // =====================================================================
+        // GALLERY — admin (create / read / update / delete)
+        // =====================================================================
+        function adminSet(html) { document.getElementById('admin-panel-content').innerHTML = html; window.scrollTo(0, 0); }
+        function savedToast(msg) {
+            showToast(persistGallery() ? msg : msg + ' — but this browser blocked saving, so it will be lost on reload.');
+        }
+        function nextGalleryId(type) {
+            const prefix = type === 'video' ? 'video' : 'photo';
+            let max = 0;
+            store.gallery.forEach(i => { const m = i.id.match(new RegExp('^' + prefix + '-(\\d+)$')); if (m) max = Math.max(max, +m[1]); });
+            return prefix + '-' + String(max + 1).padStart(3, '0');
+        }
+        function isSafeMediaPath(p) {
+            if (!p) return true;
+            if (/^[a-z][a-z0-9+.-]*:/i.test(p)) return /^https?:\/\//i.test(p);
+            return !/^\s*(javascript|data|vbscript)\s*:/i.test(p);
+        }
+        function validateGalleryItem(it) {
+            const e = [];
+            if (!it.title) e.push('Add a title.');
+            if (it.date && isNaN(new Date(it.date + 'T00:00:00'))) e.push('The date is not valid.');
+            if (!isSafeMediaPath(it.src)) e.push('The source must be a file path (images/gallery/…) or an http(s) link.');
+            if (!isSafeMediaPath(it.poster)) e.push('The poster must be a file path or an http(s) link.');
+            if (it.type === 'video' && it.src) {
+                const k = parseVideoSource(it.src).kind;
+                if (k === 'external') e.push('Only YouTube and Vimeo links can be embedded. Use one of those, or an .mp4 / .webm file.');
+                else if (k === 'unsupported' || k === 'invalid') e.push('Video sources must be an .mp4 / .webm file path, or a YouTube / Vimeo link.');
+            }
+            if (it.published && !it.isSample && !it.src) e.push('Published items need a source. Add a file path or link, or tick “Sample”, or untick “Published”.');
+            return e;
+        }
+
+        function adminGalleryList() {
+            const n = store.gallery.length, samples = store.gallery.filter(i => i.isSample).length;
+            const rows = store.gallery.map(it => {
+                const vid = it.type === 'video';
+                const thumb = vid ? posterFor(it) : it.src;
+                const label = esc(it.title);
+                return `<tr data-media-row>
+                    <td>${imgTag(thumb, '', vid ? 'video' : 'gallery', 'class="a-thumb" loading="lazy"')}</td>
+                    <td><strong>${label}</strong><div class="tags">${it.isSample ? '<span class="tag sample">Sample</span>' : ''}${it.published === false ? '<span class="tag hidden-tag">Hidden</span>' : ''}<span class="tag warn miss-flag">Image not found</span></div></td>
+                    <td>${vid ? 'Video' : 'Photo'}</td>
+                    <td>${esc(it.category)}</td>
+                    <td>${esc(formatGalleryDate(it.date)) || '—'}</td>
+                    <td><div class="a-actions">
+                        <button type="button" class="btn btn-small" data-id="${esc(it.id)}" aria-label="Preview ${label}" onclick="adminGalleryPreview(this.dataset.id)">Preview</button>
+                        <button type="button" class="btn btn-small" data-id="${esc(it.id)}" aria-label="Edit ${label}" onclick="adminGalleryForm(this.dataset.id)">Edit</button>
+                        <button type="button" class="btn btn-small" data-id="${esc(it.id)}" aria-label="${it.published === false ? 'Publish' : 'Hide'} ${label}" onclick="adminGalleryToggle(this.dataset.id)">${it.published === false ? 'Publish' : 'Hide'}</button>
+                        <button type="button" class="btn btn-small btn-danger" data-id="${esc(it.id)}" aria-label="Delete ${label}" onclick="adminGalleryDelete(this.dataset.id)">Delete</button>
+                    </div></td></tr>`;
+            }).join('');
+            adminSet(`
+                <div class="a-head">
+                    <h1>Gallery</h1>
+                    <div class="btn-row">
+                        <button type="button" class="btn btn-primary btn-small" onclick="adminGalleryForm()">+ Add photo / video</button>
+                        <button type="button" class="btn btn-small" onclick="adminGalleryExport()">Export</button>
+                        ${samples ? `<button type="button" class="btn btn-small" onclick="adminGalleryRemoveSamples()">Remove ${samples} sample${samples > 1 ? 's' : ''}</button>` : ''}
+                        <button type="button" class="btn btn-small btn-danger" onclick="adminGalleryReset()">Reset to starter content</button>
+                    </div>
+                </div>
+                <p class="demo-note">Changes are saved in <strong>this browser only</strong> (localStorage). Visitors on other devices will not see them. To publish for everyone: put the files in <code>images/gallery/</code> and <code>videos/gallery/</code>, press <strong>Export</strong>, and paste the result into <code>GALLERY_DEFAULTS</code> in the page code. There is no file upload — this site has no server.</p>
+                ${n ? `<div class="table-wrap"><table class="a-table">
+                    <thead><tr><th scope="col">Preview</th><th scope="col">Title</th><th scope="col">Type</th><th scope="col">Category</th><th scope="col">Date</th><th scope="col">Actions</th></tr></thead>
+                    <tbody>${rows}</tbody></table></div>` : '<div class="empty"><h2>No gallery items</h2><p>Add your first photo or video.</p></div>'}
+            `);
+        }
+        function adminGalleryPreview(id) { const it = galleryById(id); if (it) openLightbox([it], 0); }
+        function adminGalleryToggle(id) {
+            const it = galleryById(id); if (!it) return;
+            it.published = it.published === false;
+            savedToast(it.published ? 'Published' : 'Hidden from the public gallery');
+            adminGalleryList();
+        }
+        function adminGalleryDelete(id) {
+            const it = galleryById(id); if (!it) return;
+            confirmDialog({ title: 'Delete this item?', message: `“${it.title}” will be removed from the gallery. This can’t be undone (the media file itself is not deleted).`, confirmLabel: 'Delete', danger: true, onConfirm: () => {
+                store.gallery = store.gallery.filter(x => x.id !== id);
+                savedToast('Deleted');
+                adminGalleryList();
+            } });
+        }
+        function adminGalleryRemoveSamples() {
+            const c = store.gallery.filter(i => i.isSample).length;
+            if (!c) return;
+            confirmDialog({ title: 'Remove sample entries?', message: `This removes the ${c} item${c > 1 ? 's' : ''} marked “Sample”. Your own items are kept.`, confirmLabel: 'Remove samples', danger: true, onConfirm: () => {
+                store.gallery = store.gallery.filter(i => !i.isSample);
+                savedToast('Sample entries removed');
+                adminGalleryList();
+            } });
+        }
+        function adminGalleryReset() {
+            confirmDialog({ title: 'Reset to starter content?', message: 'All gallery changes saved in this browser will be replaced by the starter entries.', confirmLabel: 'Reset', danger: true, onConfirm: () => {
+                try { localStorage.removeItem(GALLERY_KEY); } catch (e) {}
+                store.gallery = galleryDefaults();
+                showToast('Gallery reset to starter content');
+                adminGalleryList();
+            } });
+        }
+        function adminGalleryExport() {
+            const json = JSON.stringify(store.gallery, null, 2);
+            Overlay.open(`<div class="dlg" data-keep>
+                <h2>Export gallery</h2>
+                <p>Copy this and replace the array inside <code>GALLERY_DEFAULTS</code> in the page code, then raise <code>GALLERY_VERSION</code> by 1. After that every visitor sees these items.</p>
+                <div class="form-group" style="margin-top:1rem"><label for="export-text">Gallery data</label><textarea id="export-text" readonly>${esc(json)}</textarea></div>
+                <div class="btn-row"><button type="button" class="btn btn-primary" onclick="copyExport()">Copy to clipboard</button><button type="button" class="btn" data-autofocus onclick="Overlay.close()">Close</button></div>
+            </div>`, { label: 'Export gallery', className: 'ov-dialog' });
+        }
+        function copyExport() {
+            const t = document.getElementById('export-text');
+            t.select();
+            const done = () => showToast('Copied to clipboard');
+            if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t.value).then(done, () => { try { document.execCommand('copy'); done(); } catch (e) {} });
+            else { try { document.execCommand('copy'); done(); } catch (e) {} }
+        }
+
+        function adminGalleryForm(id) {
+            const it = id ? galleryById(id) : null;
+            const d = it || { id: '', type: 'image', title: '', description: '', alt: '', category: GALLERY_CATEGORIES[0], src: '', poster: '', date: '', published: true, isSample: false };
+            const cats = GALLERY_CATEGORIES.includes(d.category) ? GALLERY_CATEGORIES : GALLERY_CATEGORIES.concat(d.category);
+            adminSet(`
+                <div class="a-head"><h1>${it ? 'Edit item' : 'Add photo / video'}</h1><button type="button" class="btn btn-small" onclick="adminGalleryList()">← Back to list</button></div>
+                <form class="form-card a-form" id="gallery-form" onsubmit="adminGallerySave(event)" novalidate>
+                    <div id="gf-errors" class="form-errors" role="alert" hidden></div>
+                    <input type="hidden" name="id" value="${esc(d.id)}">
+                    <div class="form-row">
+                        <div class="form-group"><label for="gf-type">Media type</label>
+                            <select id="gf-type" name="type" onchange="galleryFormType(); galleryFormPreview(true)"><option value="image" ${d.type === 'image' ? 'selected' : ''}>Photo</option><option value="video" ${d.type === 'video' ? 'selected' : ''}>Video</option></select></div>
+                        <div class="form-group"><label for="gf-cat">Category</label>
+                            <select id="gf-cat" name="category">${cats.map(c => `<option ${c === d.category ? 'selected' : ''}>${esc(c)}</option>`).join('')}</select></div>
+                    </div>
+                    <div class="form-group"><label for="gf-title">Title</label><input id="gf-title" name="title" type="text" value="${esc(d.title)}" maxlength="120"></div>
+                    <div class="form-group"><label for="gf-desc">Caption (optional)</label><textarea id="gf-desc" name="description" rows="3" maxlength="400">${esc(d.description)}</textarea></div>
+                    <div class="form-row">
+                        <div class="form-group"><label for="gf-date">Date (optional)</label><input id="gf-date" name="date" type="date" value="${esc(d.date)}"></div>
+                        <div class="form-group" id="gf-alt-group"><label for="gf-alt">Image description for screen readers</label><input id="gf-alt" name="alt" type="text" value="${esc(d.alt)}" maxlength="200"></div>
+                    </div>
+                    <div class="form-group"><label for="gf-src" id="gf-src-label">Source</label><input id="gf-src" name="src" type="text" value="${esc(d.src)}" oninput="galleryFormPreview()" autocomplete="off" spellcheck="false"><p class="form-help" id="gf-src-help"></p></div>
+                    <div class="form-group" id="gf-poster-group"><label for="gf-poster">Video thumbnail / poster image</label><input id="gf-poster" name="poster" type="text" value="${esc(d.poster)}" oninput="galleryFormPreview()" placeholder="images/gallery/your-clip-poster.jpg" autocomplete="off" spellcheck="false"><p class="form-help">Optional for YouTube links (the thumbnail is fetched automatically).</p></div>
+                    <div class="a-preview"><div class="box"><img id="gf-pv" alt="" src="${placeholder('gallery')}"></div><p id="gf-pv-msg" role="status"></p></div>
+                    <label class="check"><input type="checkbox" name="published" ${d.published !== false ? 'checked' : ''}><span>Published <small>Untick to hide it from the public gallery.</small></span></label>
+                    <label class="check"><input type="checkbox" name="isSample" ${d.isSample ? 'checked' : ''}><span>Sample entry <small>Shows a “Sample” tag. Untick once it is real media; use “Remove samples” to clear them all.</small></span></label>
+                    <div class="btn-row" style="margin-top:1.4rem"><button type="submit" class="btn btn-primary">${it ? 'Save changes' : 'Add to gallery'}</button><button type="button" class="btn" onclick="adminGalleryList()">Cancel</button></div>
+                </form>`);
+            galleryFormType();
+            galleryFormPreview(true);
+        }
+        function galleryFormType() {
+            const vid = document.getElementById('gf-type').value === 'video';
+            document.getElementById('gf-poster-group').style.display = vid ? '' : 'none';
+            document.getElementById('gf-alt-group').style.display = vid ? 'none' : '';
+            document.getElementById('gf-src-label').textContent = vid ? 'Video file or link' : 'Photo file or link';
+            document.getElementById('gf-src').placeholder = vid ? 'videos/gallery/your-clip.mp4  or  https://youtu.be/…' : 'images/gallery/your-photo.jpg';
+            document.getElementById('gf-src-help').textContent = vid
+                ? 'Copy your .mp4 / .webm into videos/gallery/ next to this page, then type its path. YouTube and Vimeo links also work. Leave empty for a placeholder.'
+                : 'Copy your photo into images/gallery/ next to this page, then type its path. Leave empty for a placeholder.';
+        }
+        let pvTimer = null;
+        function galleryFormPreview(now) {
+            clearTimeout(pvTimer);
+            pvTimer = setTimeout(runGalleryPreview, now ? 0 : 300);
+        }
+        function runGalleryPreview() {
+            const f = document.getElementById('gallery-form');
+            if (!f) return;
+            const vid = f.elements.type.value === 'video', src = f.elements.src.value.trim(), poster = f.elements.poster.value.trim();
+            const img = document.getElementById('gf-pv'), msg = document.getElementById('gf-pv-msg');
+            const kind = vid ? 'video' : 'gallery';
+            let target = src, info = '';
+            if (vid) {
+                const v = parseVideoSource(src);
+                target = poster || v.thumb || '';
+                info = { none: 'No video yet — the placeholder will show.', file: 'Local video file. It can only be checked when it plays.', youtube: 'YouTube video recognised.', vimeo: 'Vimeo video recognised.', external: 'Not a YouTube/Vimeo link, so it can’t be embedded.', unsupported: 'Use an .mp4 / .webm path or a YouTube/Vimeo link.', invalid: 'This isn’t a usable video source.' }[v.kind];
+            }
+            if (!target || !isSafeMediaPath(target)) {
+                img.src = placeholder(kind);
+                msg.textContent = vid ? info : (src ? 'This isn’t a usable file path or link.' : 'No photo yet — the placeholder will show.');
+                return;
+            }
+            const probe = new Image();
+            probe.onload = () => { img.src = target; msg.textContent = (vid ? info + ' ' : '') + 'Thumbnail found. ✓'; };
+            probe.onerror = () => { img.src = placeholder(kind); msg.textContent = (vid ? info + ' ' : '') + 'Image not found at this path. Check the folder and file name (paths are relative to this page).'; };
+            probe.src = target;
+        }
+        function adminGallerySave(e) {
+            e.preventDefault();
+            const f = e.target, v = n => f.elements[n].value.trim();
+            const id = v('id'), base = id ? galleryById(id) : null;
+            const type = v('type') === 'video' ? 'video' : 'image';
+            const it = {
+                id: id || nextGalleryId(type), type, title: v('title'), description: v('description'), alt: type === 'image' ? v('alt') : '',
+                category: v('category'), src: v('src'), poster: type === 'video' ? v('poster') : '', date: v('date'),
+                published: f.elements.published.checked, isSample: f.elements.isSample.checked
+            };
+            const errs = validateGalleryItem(it), box = document.getElementById('gf-errors');
+            if (errs.length) {
+                box.innerHTML = `<strong>Please fix:</strong><ul>${errs.map(m => `<li>${esc(m)}</li>`).join('')}</ul>`;
+                box.hidden = false;
+                box.scrollIntoView({ block: 'center' });
+                return;
+            }
+            if (base) Object.assign(base, it); else store.gallery.unshift(it);
+            savedToast(base ? 'Changes saved' : 'Added to the gallery');
+            adminGalleryList();
+        }
+
+        // --- INITIALIZATION ---
+        window.addEventListener('DOMContentLoaded', () => {
+            renderFooterSocials();
+            router.navigate('home');
+        });
+
+    </script>
+</body>
+</html>
